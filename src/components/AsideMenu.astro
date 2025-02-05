@@ -1,0 +1,63 @@
+---
+import HomeIcon from "@/icons/Home.astro";
+import LibraryIcon from "@/icons/Library.astro";
+import UserIcon from "@/icons/User.astro";
+import SideMenuItems from "./SideMenuItems.astro";
+
+interface Props {
+  person?: string;
+  role1?: string;
+  role2?: string;
+  experience?: number;
+}
+
+const { person, role1, role2, experience } = Astro.props;
+---
+
+<nav class="flex flex-col flex-1 gap-2 ">
+  
+  <div class=" rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
+    <div
+      class="flex flex-col items-center justify-center p-2 m-2 group  text-paragraph-light dark:text-paragraph-dark"
+    >
+      <UserIcon />
+      <h3
+        class=" hover:scale-105 duration-75 mt-2.5"
+      >
+        {person}
+      </h3>
+      <ul class="flex flex-col items-start text-sm space-y-0.5 mt-1">
+        <li
+          class=" hover:scale-105 duration-75 list-disc"
+        >
+          {role1}
+        </li>
+        <li
+          class=" hover:scale-105 duration-75 list-disc"
+        >
+          {role2}
+        </li>
+        <li
+          class=" hover:scale-105 duration-75 list-disc"
+        >
+          Experiencia: {experience} years
+        </li>
+      </ul>
+    </div>
+    <SideMenuItems href="/">
+      <HomeIcon />
+      Home
+    </SideMenuItems>
+    <SideMenuItems href="#">
+      <LibraryIcon />
+      Library
+    </SideMenuItems>
+  </div>
+
+  <div class=" rounded-lg p-2 border-4 border-border mx-0.5 flex-1">
+    <SideMenuItems href="#">
+      <LibraryIcon />
+      Tu Biblioteca
+    </SideMenuItems>
+  </div>
+</nav>

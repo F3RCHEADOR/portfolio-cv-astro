@@ -1,0 +1,66 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import AsideMenu from "../components/AsideMenu.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+import { ClientRouter } from "astro:transitions";
+import ToggleSideBarButton from "@/components/ToggleSideBarButton.astro";
+import ThemeToggleButton from '@/components/ThemeToggleButton.jsx';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <body
+    class="w-full h-screen p-2 gap-2 grid grid-cols-4 bg-main-light dark:bg-main-dark"
+  >
+    <!-- Barra lateral -->
+    <aside id="SideBar" class="order-1 flex overflow-y-auto z-50">
+      <AsideMenu
+        person="Fabian Fernando Fonseca Chacon (T.F)"
+        role1="Ingeniero de Sistemas"
+        role2="Desarrollador FrontEnd"
+        experience={2}
+      />
+    </aside>
+
+    <!-- Contenido principal -->
+    <main
+      id="Main"
+      class="order-2 col-span-3 rounded-lg overflow-y-auto relative min-h-screen z-10"
+    >
+      <ClientRouter />
+      <div class="flex w-full items-center justify-between p-1">
+        <ToggleSideBarButton />
+        <ThemeToggleButton  client:visible/>
+      </div>
+    
+
+      <slot />
+    </main>
+
+    <!-- Script del sidebar -->
+    <script>
+      import { isOpen } from "../store.js"; // Asegúrate de que esto esté funcionando bien.
+
+      const SideBar = document.getElementById("SideBar");
+      const Main = document.getElementById("Main");
+
+      isOpen?.subscribe((open) => {
+        if (open) {
+          Main?.classList.replace("col-span-4"
+          , "col-span-3");
+          Main?.classList.add("order-2");
+          SideBar?.classList.replace("-translate-x-full", "translate-x-0");
+          SideBar?.classList.add("order-1");
+        } else {
+          Main?.classList.replace("col-span-3", "col-span-4");
+          Main?.classList.add("order-1");
+          SideBar?.classList.replace("translate-x-0", "-translate-x-full");
+          SideBar?.classList.add("order-2");
+        }
+      });
+    </script>
+  </body>
+</html>

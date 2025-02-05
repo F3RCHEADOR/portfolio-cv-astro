@@ -1,0 +1,43 @@
+---
+import MenuIcon from "@/icons/Menu.astro";
+---
+
+<button
+  id="ToggleSideBar"
+  class="w-10 p-2 rounded-md hover:scale-105 duration-100 cursor-pointer"
+  ><MenuIcon /></button
+>
+
+<script>
+  import { isOpen } from "../store.js";
+
+  // Set the store to true when the button is clicked
+  function openDialog() {
+    if (isOpen.value === false) {
+      isOpen.set(true);
+    } else {
+      isOpen.set(false);
+    }
+  }
+
+  const ToggleSideBar = document.getElementById("ToggleSideBar");
+
+  ToggleSideBar?.addEventListener("click", openDialog);
+
+  isOpen.subscribe((open) => {
+      if (open) {
+        // Cuando isOpen es verdadero, el sidebar se mueve a la derecha
+        ToggleSideBar?.classList.add("left-0");
+        ToggleSideBar?.classList.remove("right-0");
+    
+     
+      } else {
+        // Cuando isOpen es falso, el sidebar se mueve a la izquierda
+        ToggleSideBar?.classList.remove("left-0");
+        ToggleSideBar?.classList.add("right-0");
+     
+      }
+    });
+
+  // Add an event listener to the button
+</script>
