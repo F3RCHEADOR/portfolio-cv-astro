@@ -1,23 +1,51 @@
 ---
-title: 'Panaderia Astro'
-description: 'Web-Site de Panaderia con Astro'
-utils: ['Astro' , 'Tailwind']
+title: 'Panadería Astro'
+description: 'Web-Site de Panadería desarrollado con Astro. Inspirado en otra panadería Europea, es una aproximación de página de panadería con tecnologías de Astro integradas.'
+utils: ['Astro', 'Tailwind']
 pubDate: 'Jul 20 2022'
 ---
+# Panadería Astro
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div className="relative overflow-hidden rounded-lg shadow-lg">
+    <img src="/images/pan1.jpg" alt="Panadería Astro 1" className="w-full h-full object-cover"/>
+    <div className="absolute inset-0 bg-black opacity-25"></div>
+    <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Pan de Leche</div>
+  </div>
+  <div className="relative overflow-hidden rounded-lg shadow-lg">
+    <img src="/images/pan2.jpg" alt="Panadería Astro 2" className="w-full h-full object-cover"/>
+    <div className="absolute inset-0 bg-black opacity-25"></div>
+    <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Croissant</div>
+  </div>
+  <div className="relative overflow-hidden rounded-lg shadow-lg">
+    <img src="/images/pan3.jpg" alt="Panadería Astro 3" className="w-full h-full object-cover"/>
+    <div className="absolute inset-0 bg-black opacity-25"></div>
+    <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Baguette Artesanal</div>
+  </div>
+</div>
+
+## La esencia de la panadería Astro
+
+Panadería Astro es una página web moderna y funcional, desarrollada utilizando **Astro** como framework principal, y **Tailwind CSS** para el diseño responsivo y estilizado. El sitio busca reflejar la calidez y la tradición de una panadería Europea, pero con un enfoque tecnológico que resalta la eficiencia y la rapidez que las tecnologías modernas pueden aportar al desarrollo web.
+
+## Un diseño inspirado en la tradición
+
+El diseño de Panadería Astro está inspirado en las clásicas panaderías europeas que se encuentran en las esquinas de calles históricas, pero con un toque moderno y elegante. Las imágenes de pan y productos de pastelería se presentan de forma atractiva, mientras que la paleta de colores cálidos y suaves evoca una sensación acogedora, casi como si estuviéramos entrando a una panadería real.
+
+## Tecnología de vanguardia para una experiencia fluida
+
+La elección de **Astro** como framework para este proyecto no es casualidad. Astro permite crear sitios web rápidos y optimizados sin comprometer la calidad del contenido o la estética. Además, su capacidad de trabajar sin JavaScript por defecto ofrece una carga más rápida y una experiencia de usuario mejorada. Esto es especialmente importante cuando se trata de un sitio web que debe ser accesible y ágil, como el de una panadería.
+
+## Estilos responsivos con Tailwind CSS
+
+Para lograr un diseño limpio y responsivo, **Tailwind CSS** fue la elección perfecta. Gracias a su sistema de clases utilitarias, fue posible crear un diseño flexible que se adapta a diferentes tamaños de pantalla, sin perder la coherencia visual ni la facilidad de uso. Ya sea que accedas al sitio desde un móvil, tablet o escritorio, la experiencia se mantiene impecable en todos los dispositivos.
+
+## Un proyecto en constante evolución
+
+Aunque la panadería Astro fue lanzada oficialmente en **Julio de 2022**, el proyecto sigue en constante evolución. La idea es integrar más características y mejorar la accesibilidad, siempre con el objetivo de crear un sitio web que no solo sea bonito, sino también funcional y fácil de navegar. Con cada actualización, la página busca ofrecer una experiencia más completa, mejorando tanto el rendimiento como la interfaz de usuario.
+
+## Galería de Imágenes
+
+Aquí tienes una pequeña galería que muestra los deliciosos productos de Panadería Astro:
 
 
-#*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra.*
-
-#Adipiscing enim eu** 
-
-turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
-
-![blog placeholder](/mochoup.jpg)
-
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
-
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.

@@ -1,22 +1,27 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import { render } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('project');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("project");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data}>
-	<div transition:name={`${post.id}`} class="max-w-4xl mx-auto prose prose-p:text-[#094067] prose-li:text-[#062236]"><Content /></div>
-	
+  <div
+    transition:name={`${post.id}`}
+    class="max-w-4xl my-6 mx-auto prose prose-headings:text-heading-main-light
+		dark:prose-headings:text-headingg-main-dark dark:prose-strong:text-paragraph-dark  prose-p:text-paragraph-light dark:prose-p:text-paragraph-dark"
+  >
+    <Content />
+  </div>
 </BlogPost>

@@ -9,7 +9,7 @@ const ThemeToggleButton = () => {
   // Usar useEffect para aplicar la clase "dark" en el <html>
   useEffect(() => {
     const htmlElement = document.documentElement;
-    if (isDark) {
+    if (!isDark) {
       htmlElement.classList.add("dark");
     } else {
       htmlElement.classList.remove("dark");
@@ -20,7 +20,7 @@ const ThemeToggleButton = () => {
     <button
       id="toggle-theme"
       type="button"
-      className="border-2 z-50 m-6 cursor-pointer p-2 bg-gray-200 dark:bg-gray-700 rounded-full"
+      className="fixed top-2 right-0 border-2 z-50 m-6 cursor-pointer p-2 bg-gray-200 dark:bg-gray-700 rounded-full"
       onClick={toggleTheme} // Llamamos a la función para alternar el tema
     >
       {/* SVG para el ícono de sol */}

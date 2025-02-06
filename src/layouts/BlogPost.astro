@@ -3,7 +3,6 @@ import BaseHead from "../components/BaseHead.astro";
 import AsideMenu from "../components/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
-import ToggleSideBarButton from "@/components/ToggleSideBarButton.astro";
 import ThemeToggleButton from '@/components/ThemeToggleButton.jsx';
 ---
 
@@ -16,25 +15,24 @@ import ThemeToggleButton from '@/components/ThemeToggleButton.jsx';
     class="w-full h-screen p-2 gap-2 grid grid-cols-4 bg-main-light dark:bg-main-dark"
   >
     <!-- Barra lateral -->
-    <aside id="SideBar" class="order-1 flex overflow-y-auto z-50">
+    <aside id="SideBar" class="relative order-1 ">
       <AsideMenu
         person="Fabian Fernando Fonseca Chacon (T.F)"
         role1="Ingeniero de Sistemas"
         role2="Desarrollador FrontEnd"
         experience={2}
       />
+    
     </aside>
 
     <!-- Contenido principal -->
     <main
       id="Main"
-      class="order-2 col-span-3 rounded-lg overflow-y-auto relative min-h-screen z-10"
+      class="relative order-2 col-span-3 rounded-lg overflow-y-auto min-h-screen z-10"
     >
       <ClientRouter />
-      <div class="flex w-full items-center justify-between p-1">
-        <ToggleSideBarButton />
         <ThemeToggleButton  client:visible/>
-      </div>
+   
     
 
       <slot />
