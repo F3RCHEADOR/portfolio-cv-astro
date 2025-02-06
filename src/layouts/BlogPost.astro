@@ -3,7 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import AsideMenu from "../components/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
-import ThemeToggleButton from '@/components/ThemeToggleButton.jsx';
+import SideBarToggle from "@/components/SideBarToggle.jsx"; // 
+import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para cambiar el tema
 ---
 
 <html lang="en">
@@ -11,54 +12,29 @@ import ThemeToggleButton from '@/components/ThemeToggleButton.jsx';
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body
-    class="w-full h-screen p-2 gap-2 grid grid-cols-4 bg-main-light dark:bg-main-dark"
-  >
+  <body class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark">
     <!-- Barra lateral -->
-    <aside id="SideBar" class="relative order-1 ">
+    <aside
+      id="SideBar"
+      class="col-span-1 z-50 fixed top-0 left-0 w-96 min-h-screen flex flex-col flex-1 gap-2 m-1 transform transition-all bg-main-light dark:bg-main-dark"
+    >
       <AsideMenu
         person="Fabian Fernando Fonseca Chacon (T.F)"
         role1="Ingeniero de Sistemas"
         role2="Desarrollador FrontEnd"
         experience={2}
       />
-    
     </aside>
 
     <!-- Contenido principal -->
     <main
       id="Main"
-      class="relative order-2 col-span-3 rounded-lg overflow-y-auto min-h-screen z-10"
+      class="relative rounded-lg overflow-y-auto min-h-screen z-10 transform transition-all"
     >
       <ClientRouter />
-        <ThemeToggleButton  client:visible/>
-   
-    
-
+      <ThemeToggleButton client:visible />
+      <SideBarToggle client:visible /> <!-- Aquí insertamos el botón para alternar el sidebar -->
       <slot />
     </main>
-
-    <!-- Script del sidebar -->
-    <script>
-      import { isOpen } from "../store.js"; // Asegúrate de que esto esté funcionando bien.
-
-      const SideBar = document.getElementById("SideBar");
-      const Main = document.getElementById("Main");
-
-      isOpen?.subscribe((open) => {
-        if (open) {
-          Main?.classList.replace("col-span-4"
-          , "col-span-3");
-          Main?.classList.add("order-2");
-          SideBar?.classList.replace("-translate-x-full", "translate-x-0");
-          SideBar?.classList.add("order-1");
-        } else {
-          Main?.classList.replace("col-span-3", "col-span-4");
-          Main?.classList.add("order-1");
-          SideBar?.classList.replace("translate-x-0", "-translate-x-full");
-          SideBar?.classList.add("order-2");
-        }
-      });
-    </script>
   </body>
 </html>

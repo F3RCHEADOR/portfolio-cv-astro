@@ -4,6 +4,7 @@ import { themeStore, toggleTheme } from "../themeStore"; // Importa el store
 
 const ThemeToggleButton = () => {
   // Obtener el estado del tema desde el store
+  console.log("hola")
   const isDark = useStore(themeStore);
 
   // Usar useEffect para aplicar la clase "dark" en el <html>

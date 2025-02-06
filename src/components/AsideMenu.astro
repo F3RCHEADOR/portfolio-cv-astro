@@ -3,7 +3,7 @@ import HomeIcon from "@/icons/Home.astro";
 import LibraryIcon from "@/icons/Library.astro";
 import UserIcon from "@/icons/User.astro";
 import SideMenuItems from "./SideMenuItems.astro";
-import ToggleSideBarButton from "./ToggleSideBarButton.astro";
+import ToggleSideBarButton from "./SideBarToggle";
 
 interface Props {
   person?: string;
@@ -15,11 +15,11 @@ interface Props {
 const { person, role1, role2, experience } = Astro.props;
 ---
 
-<nav class="fixed top-0 min-h-screen flex flex-col flex-1 gap-2 m-1 ">
+
   
   <div class="rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
     <div class="relative">
-      <ToggleSideBarButton />
+    
     </div>
     <div
       class="flex flex-col items-center justify-center p-2 m-2 group  text-paragraph-light dark:text-paragraph-dark"
@@ -64,4 +64,4 @@ const { person, role1, role2, experience } = Astro.props;
       Tu Biblioteca
     </SideMenuItems>
   </div>
-</nav>
+
