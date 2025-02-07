@@ -1,21 +1,37 @@
 ---
 title: 'BakeryDonuts'
-description: 'E-commerce con Astro'
+description: 'Bakery Donuts es un proyecto creado con Astro, donde se exploran algunas tecnologías interesantes como Nanostore y View Transitions. Es una tienda virtual de donas, pero con un enfoque en la experiencia del usuario'
 utils: ['Astro' , 'Tailwind']
 pubDate: 'Jul 09 2022'
 ---
 
 
-#*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra.*
+# Bakery Donuts
 
-#Adipiscing enim eu** 
+## ¿Qué es Bakery Donuts?
 
-turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+**Bakery Donuts** es un proyecto creado con **Astro**, donde se exploran algunas tecnologías interesantes como **Nanostore** y **View Transitions**. Es una tienda virtual de donas, pero con un enfoque en la experiencia del usuario: desde cómo manejar el carrito de compras hasta las transiciones suaves entre las diferentes páginas. Este proyecto no solo es una buena excusa para disfrutar de unas "donas virtuales", sino también una oportunidad para conocer cómo funcionan estas herramientas en un entorno real.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+### ¿Qué hace especial a este proyecto?
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Lo interesante de **Bakery Donuts** es cómo integra de forma sencilla **Nanostore** y las **View Transitions API** para mejorar la interacción del usuario.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+- **Nanostore** se utiliza para gestionar el estado del carrito de compras de manera súper eficiente y reactiva, sin tener que recurrir a soluciones más complejas como Redux o Vuex.
+- **View Transitions** nos permite crear transiciones de vistas suaves y naturales, haciendo que la navegación por el sitio sea mucho más fluida, sin que el navegador recargue la página constantemente.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+En resumen, es una tienda en línea de donas que te permite ver cómo interactúan estas herramientas para crear un sitio moderno y reactivo.
+
+## ¿Qué tecnologías utilizamos?
+
+- **Astro**: Un generador de sitios estáticos que permite usar componentes de diferentes frameworks y optimiza el rendimiento de las páginas.
+- **Nanostore**: Una biblioteca de estado reactivo ligera y rápida, perfecta para manejar datos sin sobrecargar el rendimiento.
+- **View Transitions API**: Una nueva forma de animar las transiciones entre diferentes vistas de un sitio, creando una navegación mucho más dinámica.
+
+## ¿Cómo empezar?
+
+Si quieres probar el proyecto en tu máquina local, sigue estos pasos:
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/tu-usuario/bakery-donuts.git
+   cd bakery-donuts

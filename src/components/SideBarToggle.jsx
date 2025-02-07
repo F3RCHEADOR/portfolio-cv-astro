@@ -14,11 +14,11 @@ const SideBarToggle = () => {
     if (sideBar && main) {
       if (isSideBarOpen) {
         console.log("Sidebar abierto. Aplicando clases...");
-        main.classList.add("sm:ml-80"); // Aplica margen al contenido principal
+        main.classList.add("sm:ml-80","hidden","sm:block"); // Aplica margen al contenido principal
         sideBar.classList.remove("-translate-x-full"); // Muestra el sidebar
       } else {
         console.log("Sidebar cerrado. Eliminar clases...");
-        main.classList.remove("sm:ml-80"); // Elimina el margen
+        main.classList.remove("sm:ml-80","hidden","sm:block"); // Elimina el margen
         sideBar.classList.add("-translate-x-full"); // Oculta el sidebar
       }
     }

@@ -13,7 +13,7 @@ import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para camb
   </head>
 
   <body
-    class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all"
+    class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all overflow-hidden"
   >
     <!-- Barra lateral -->
     <aside
@@ -31,7 +31,7 @@ import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para camb
     <!-- Contenido principal -->
     <main
       id="Main"
-      class="relative rounded-lg overflow-y-auto  z-10 transform transition-all h-full"
+      class="relative rounded-lg overflow-y-auto z-10 transform transition-all h-full"
     >
       <ClientRouter />
       <ThemeToggleButton client:visible />
