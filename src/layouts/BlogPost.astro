@@ -3,7 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import AsideMenu from "../components/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
-import SideBarToggle from "@/components/SideBarToggle.jsx"; // 
+import SideBarToggle from "@/components/SideBarToggle.jsx"; //
 import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para cambiar el tema
 ---
 
@@ -12,11 +12,13 @@ import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para camb
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark">
+  <body
+    class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all"
+  >
     <!-- Barra lateral -->
     <aside
       id="SideBar"
-      class="col-span-1 z-50 fixed top-0 left-0 w-96 min-h-screen flex flex-col flex-1 gap-2 m-1 transform transition-all bg-main-light dark:bg-main-dark"
+      class="col-span-1 z-40 fixed top-0 left-0 w-full sm:w-80 h-full flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
     >
       <AsideMenu
         person="Fabian Fernando Fonseca Chacon (T.F)"
@@ -29,11 +31,11 @@ import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para camb
     <!-- Contenido principal -->
     <main
       id="Main"
-      class="relative rounded-lg overflow-y-auto min-h-screen z-10 transform transition-all"
+      class="relative rounded-lg overflow-y-auto  z-10 transform transition-all h-full"
     >
       <ClientRouter />
       <ThemeToggleButton client:visible />
-      <SideBarToggle client:visible /> <!-- Aquí insertamos el botón para alternar el sidebar -->
+      <!-- Aquí insertamos el botón para alternar el sidebar -->
       <slot />
     </main>
   </body>

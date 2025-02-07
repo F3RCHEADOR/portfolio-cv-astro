@@ -4,7 +4,7 @@ import { themeStore, toggleTheme } from "../themeStore"; // Importa el store
 
 const ThemeToggleButton = () => {
   // Obtener el estado del tema desde el store
-  console.log("hola")
+ 
   const isDark = useStore(themeStore);
 
   // Usar useEffect para aplicar la clase "dark" en el <html>
@@ -21,7 +21,7 @@ const ThemeToggleButton = () => {
     <button
       id="toggle-theme"
       type="button"
-      className="fixed top-2 right-0 border-2 z-50 m-6 cursor-pointer p-2 bg-gray-200 dark:bg-gray-700 rounded-full"
+      className="fixed top-2.5 right-2 border-2 z-50 cursor-pointer p-1 bg-gray-200 dark:bg-gray-500 rounded-full"
       onClick={toggleTheme} // Llamamos a la función para alternar el tema
     >
       {/* SVG para el ícono de sol */}

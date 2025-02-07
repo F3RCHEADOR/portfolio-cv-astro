@@ -16,18 +16,20 @@ const projects = (await getCollection("project")).sort(
 
 <BlogPost>
   <section>
+    <h1 class="text-center transform transition-all text-3xl mt-5 font-semibold italic bg-gray-50 dark:bg-main-dark dark:text-headingg-main-dark">Proyectos Realizados</h1>
+   
     <ul
-      class="max-w-screen-xl grid md:grid-cols-2 mx-auto gap-y-8 gap-x-6 p-2 m-1"
+      class="max-w-screen-xl grid md:grid-cols-1 lg:grid-cols-2 mx-auto gap-y-8 gap-x-6 p-2 m-1 my-8"
     >
       {
         projects.map((project) => (
           
           <li class="flex flex-col justify-between rounded-lg py-2 px-2.5 border-border-light dark:border-gray-600 border-2 h-auto" transition:name={`${project.id}`}>
             <h3 class="text-center font-bold text-2xl text-headingg-main-light dark:text-headingg-main-dark">{project.data.title}</h3>
-            <p class="font-medium text-base p-1 m-0.5 text-paragraph-light dark:text-paragraph-dark tracking-wide">
+            <p class="font-medium text-base p-1 m-0.5 text-paragraph-light dark:text-paragraph-dark text-balance tracking-wide">
               {project.data.description}
             </p>
-            <ul class="flex flex-row space-x-6 pl-2 my-2">
+            <ul class="flex flex-row space-x-2 md:space-x-6 pl-2 my-2">
               {project.data.utils.map((tech) => (
                 <li class=" px-2 py-0.5 rounded-xl text-base cursor-pointer group duration-75">
                   {/* Condicional para renderizar el componente correcto */}

@@ -3,7 +3,9 @@ import HomeIcon from "@/icons/Home.astro";
 import LibraryIcon from "@/icons/Library.astro";
 import UserIcon from "@/icons/User.astro";
 import SideMenuItems from "./SideMenuItems.astro";
-import ToggleSideBarButton from "./SideBarToggle";
+import SideBarToggle from "./SideBarToggle";
+import Letter from "@/icons/Letter.astro";
+import Spotify from "@/icons/Spotify.astro";
 
 interface Props {
   person?: string;
@@ -15,12 +17,8 @@ interface Props {
 const { person, role1, role2, experience } = Astro.props;
 ---
 
-
-  
-  <div class="rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
-    <div class="relative">
-    
-    </div>
+  <div class="z-40 rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
+    <SideBarToggle client:visible />
     <div
       class="flex flex-col items-center justify-center p-2 m-2 group  text-paragraph-light dark:text-paragraph-dark"
     >
@@ -58,10 +56,18 @@ const { person, role1, role2, experience } = Astro.props;
     </SideMenuItems>
   </div>
 
-  <div class=" rounded-lg p-2 border-4 border-border-light dark:border-border-dark mx-0.5 flex-1">
+  <div class="flex flex-col justify-stretch rounded-lg p-2 border-4 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-4">
     <SideMenuItems href="#">
       <LibraryIcon />
       Tu Biblioteca
+    </SideMenuItems>
+    <SideMenuItems href="https://open.spotify.com/playlist/68lsszTFg2vKEV4m8jH1LV?si=g81b9z49RT-d_TkTbs-ETA">
+      <Spotify />
+      Lista Favorita :3
+    </SideMenuItems>
+    <SideMenuItems href="#">
+      <Letter />
+      Contacto
     </SideMenuItems>
   </div>
 

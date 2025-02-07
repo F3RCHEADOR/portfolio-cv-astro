@@ -10,21 +10,15 @@ const SideBarToggle = () => {
     const sideBar = document.getElementById("SideBar");
     const main = document.getElementById("Main");
 
-    console.log("Estado de sidebar en useEffect:", isSideBarOpen); // Verifica si el estado cambia correctamente
-
-    // Verificar si los elementos existen
-    console.log("sideBar:", sideBar);
-    console.log("main:", main);
-
     // Cuando el sidebar esté abierto
     if (sideBar && main) {
       if (isSideBarOpen) {
         console.log("Sidebar abierto. Aplicando clases...");
-        main.classList.add("md:ml-96"); // Aplica margen al contenido principal
+        main.classList.add("sm:ml-80"); // Aplica margen al contenido principal
         sideBar.classList.remove("-translate-x-full"); // Muestra el sidebar
       } else {
         console.log("Sidebar cerrado. Eliminar clases...");
-        main.classList.remove("md:ml-96"); // Elimina el margen
+        main.classList.remove("sm:ml-80"); // Elimina el margen
         sideBar.classList.add("-translate-x-full"); // Oculta el sidebar
       }
     }
@@ -36,12 +30,24 @@ const SideBarToggle = () => {
       <button
         id="ToggleSideBar"
         onClick={() => {
-          console.log("Botón clickeado. Ejecutando toggleSideBar.");
           toggleSideBar(); // Llamamos a la función que alterna el estado
         }}
-        className="absolute top-2 -right-14 cursor-pointer border-2 rounded-xl p-1 bg-gray-300 z-50"
+        className={`absolute top-2 ${isSideBarOpen ? 'right-2.5 md:-right-12':'-right-12'}  my-2 cursor-pointer border-2 rounded-xl p-1 bg-gray-200 dark:bg-gray-500 z-50`}
       >
-        Toggle Sidebar
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
       </button>
     </>
   );
