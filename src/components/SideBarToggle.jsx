@@ -9,16 +9,19 @@ const SideBarToggle = () => {
   useEffect(() => {
     const sideBar = document.getElementById("SideBar");
     const main = document.getElementById("Main");
+    const screen = document.getElementById("screen");
 
     // Cuando el sidebar esté abierto
     if (sideBar && main) {
       if (isSideBarOpen) {
         console.log("Sidebar abierto. Aplicando clases...");
-        main.classList.add("sm:ml-80","hidden","sm:block"); // Aplica margen al contenido principal
+        main.classList.add("sm:ml-80" );
+        screen.classList.add("hidden", "sm:block");
         sideBar.classList.remove("-translate-x-full"); // Muestra el sidebar
       } else {
         console.log("Sidebar cerrado. Eliminar clases...");
-        main.classList.remove("sm:ml-80","hidden","sm:block"); // Elimina el margen
+        main.classList.remove("sm:ml-80");
+        screen.classList.remove("hidden", "sm:block");
         sideBar.classList.add("-translate-x-full"); // Oculta el sidebar
       }
     }
@@ -32,7 +35,9 @@ const SideBarToggle = () => {
         onClick={() => {
           toggleSideBar(); // Llamamos a la función que alterna el estado
         }}
-        className={`absolute top-2 ${isSideBarOpen ? 'right-2.5 md:-right-12':'-right-12'}  my-2 cursor-pointer border-2 rounded-xl p-1 bg-gray-200 dark:bg-gray-500 z-50`}
+        className={`absolute top-2 ${
+          isSideBarOpen ? "right-6 md:right-[98%] transform translate-x-1/2 " : "left-2 sm:left-24 transform translate-x-2"
+        }  my-2 cursor-pointer border-2 rounded-xl p-1 bg-gray-200 dark:bg-gray-500 z-50`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

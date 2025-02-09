@@ -4,7 +4,6 @@ import AsideMenu from "../components/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import SideBarToggle from "@/components/SideBarToggle.jsx"; //
-import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para cambiar el tema
 ---
 
 <html lang="en">
@@ -18,7 +17,7 @@ import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para camb
     <!-- Barra lateral -->
     <aside
       id="SideBar"
-      class="col-span-1 z-40 fixed top-0 left-0 w-full sm:w-80 h-full flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
+      class="z-40 fixed top-0 left-0 w-4/5 sm:w-80 h-full flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
     >
       <AsideMenu
         person="Fabian Fernando Fonseca Chacon (T.F)"
@@ -31,12 +30,15 @@ import ThemeToggleButton from "@/components/ThemeToggleButton.jsx"; // Para camb
     <!-- Contenido principal -->
     <main
       id="Main"
-      class="relative rounded-lg overflow-y-auto z-10 transform transition-all h-full"
+      class="relative w-fulls rounded-lg overflow-y-auto z-10 transform transition-all h-full "
     >
       <ClientRouter />
-      <ThemeToggleButton client:visible />
-      <!-- Aquí insertamos el botón para alternar el sidebar -->
-      <slot />
+      <SideBarToggle client:load transition:animate={"none"} />
+      <div id="screen" class="max-w-screen-xl mx-auto">
+       
+     
+        <slot />
+      </div>
     </main>
   </body>
 </html>
