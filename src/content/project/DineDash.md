@@ -1,5 +1,6 @@
 ---
 title: 'DineDash'
+subtitle: 'Sistema POS'
 description: 'Es un innovador proyecto de gestión de puntos de venta (POS) diseñado especialmente para restaurantes, bares, panaderías, locales de comida rápida, y otros tipos de negocios del sector alimenticio. Este sistema tiene como objetivo simplificar y optimizar la administración diaria del negocio, mejorando la experiencia tanto de los empleados como de los clientes'
 utils: ['React', 'Vite', 'Node', 'Tailwind', 'Mongo']
 pubDate: 'Jul 08 2022'

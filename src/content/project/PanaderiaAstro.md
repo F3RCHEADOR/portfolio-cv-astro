@@ -1,5 +1,6 @@
 ---
 title: 'Panadería Astro'
+subtitle: 'Website'
 description: 'Web-Site de Panadería desarrollado con Astro. Inspirado en otra panadería Europea, es una aproximación de página de panadería con tecnologías de Astro integradas.'
 utils: ['Astro', 'Tailwind']
 pubDate: 'Jul 20 2022'

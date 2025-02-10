@@ -1,5 +1,6 @@
 ---
-title: 'E-Commerce'
+title: 'DaysSport'
+subtitle: 'E-Commerce'
 description: 'Plataforma de comercio electrónico diseñada para la venta de una amplia variedad de productos relacionados con el deporte y el bienestar. En este sitio, los usuarios pueden encontrar prendas deportivas, artículos útiles, equipamiento y dotaciones para diversos deportes, todo en un solo lugar. Además, el sistema permite gestionar de manera eficiente tanto los productos como las ventas realizadas'
 utils: ['React', 'Vite', 'Node', 'Tailwind', 'Mongo']
 pubDate: 'Jul 09 2022'

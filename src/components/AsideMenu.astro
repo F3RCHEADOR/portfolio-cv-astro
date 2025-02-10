@@ -9,12 +9,13 @@ import ThemeToggleButton from "./ThemeToggleButton";
 
 interface Props {
   person?: string;
+  alias?: string;
   role1?: string;
   role2?: string;
   experience?: number;
 }
 
-const { person, role1, role2, experience } = Astro.props;
+const { person, alias, role1, role2, experience } = Astro.props;
 ---
 
   <div class="z-40 rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
@@ -28,6 +29,7 @@ const { person, role1, role2, experience } = Astro.props;
       >
         {person}
       </h3>
+      <span class="text-center">{alias}</span>
       <ul class="flex flex-col items-start text-sm space-y-0.5 mt-1">
         <li
           class=" hover:scale-105 duration-75 list-disc"

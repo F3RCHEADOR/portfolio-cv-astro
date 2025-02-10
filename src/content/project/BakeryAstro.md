@@ -1,5 +1,6 @@
 ---
 title: 'BakeryDonuts'
+subtitle: 'Prototipe E-Commerce'
 description: 'Bakery Donuts es un proyecto creado con Astro, donde se exploran algunas tecnologías interesantes como Nanostore y View Transitions. Es una tienda virtual de donas, pero con un enfoque en la experiencia del usuario'
 utils: ['Astro' , 'Tailwind']
 pubDate: 'Jul 09 2022'
