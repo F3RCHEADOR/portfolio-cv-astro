@@ -2,6 +2,7 @@
 title: 'Panadería Astro'
 subtitle: 'Website'
 description: 'Web-Site de Panadería desarrollado con Astro. Inspirado en otra panadería Europea, es una aproximación de página de panadería con tecnologías de Astro integradas.'
+heroImage: /images/pan1.png
 utils: ['Astro', 'Tailwind']
 pubDate: 'Jul 20 2022'
 ---
@@ -9,7 +10,7 @@ pubDate: 'Jul 20 2022'
 
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
   <div className="relative overflow-hidden rounded-lg shadow-lg">
-    <img src="/images/pan1.jpg" alt="Panadería Astro 1" className="w-full h-full object-cover"/>
+    <img src="/images/pan1.png" alt="Panadería Astro 1" className="w-full h-full object-cover"/>
     <div className="absolute inset-0 bg-black opacity-25"></div>
     <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Pan de Leche</div>
   </div>

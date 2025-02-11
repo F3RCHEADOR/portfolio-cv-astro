@@ -8,7 +8,6 @@ import Node from "@/icons/Node.astro";
 import Mongo from "@/icons/Mongo.astro";
 import Vite from "@/icons/Vite.astro";
 import IconsUtils from "@/components/IconsUtils.astro";
-import FormContact from "@/components/FormContact.astro";
 
 const projects = (await getCollection("project")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -24,23 +23,26 @@ const projects = (await getCollection("project")).sort(
     </h1>
 
     <ul
-      class="max-w-screen-xl grid md:grid-cols-1 lg:grid-cols-2 mx-auto gap-y-8 gap-x-6 p-2 m-1 my-8"
+      class="max-w-screen-xl grid md:grid-cols-1 lg:grid-cols-2 mx-auto gap-y-10 gap-x-8 p-2 m-1 my-8"
     >
       {
         projects.map((project) => (
           <li
-            class="flex flex-col justify-between rounded-lg py-2 px-2.5 border-border-light dark:border-gray-600 border-2 h-auto"
+            class="grid grid-cols-2 gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:border border-gray-700 "
             transition:name={`${project.id}`}
           >
-            <h3 class="text-center font-bold text-2xl text-headingg-main-light dark:text-headingg-main-dark">
+            <h3 class="col-span-2 text-center font-bold text-2xl text-headingg-main-light dark:text-headingg-main-dark">
               {project.data.title}
             </h3>
             <p class="font-medium text-base p-1 m-0.5 text-paragraph-light dark:text-paragraph-dark text-pretty tracking-wide">
               {project.data.description}
             </p>
-            <ul class="flex flex-row space-x-2 md:space-x-6 pl-2 my-2">
+            <div>
+              <img src={`${project.data.heroImage}`} alt="#" />
+            </div>
+            <ul class="col-span-2 mb-4 flex flex-row items-center justify-center space-x-2 md:space-x-4 pl-2 my-2 border-b-2 border-dashed border-border-light">
               {project.data.utils.map((tech) => (
-                <li class=" px-2 py-0.5 rounded-xl text-base cursor-pointer group duration-75">
+                <li class=" px-2 py-0.5 rounded-xl text-base cursor-pointer group duration-75 mb-2">
                   {/* Condicional para renderizar el componente correcto */}
                   {tech === "Tailwind" && (
                     <IconsUtils utils="Tailwind">
@@ -86,7 +88,26 @@ const projects = (await getCollection("project")).sort(
             </ul>
             <a
               href={`/project/${project.id}`}
-              class="flex flex-col rounded-md items-center justify-end bg-button-main-light dark:bg-button-main-dark group hover:scale-y-105 transition-all "
+              class="flex justify-center mx-auto h-12 w-16 mb-2.5 rounded-md items-center bg-button-main-light dark:bg-button-main-dark group hover:scale-y-105 transition-all "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-10 bg-opacity-80 text-main-light p-1 rounded-xl gropu:hover:scale-110 hover:scale-125 transition-all"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                />
+              </svg>
+            </a>
+            <a
+              href={`/project/${project.id}`}
+              class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-main-light dark:bg-button-main-dark group hover:scale-y-105 transition-all "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +131,14 @@ const projects = (await getCollection("project")).sort(
         <a
           href="/contact"
           class="flex space-x-2 items-center h-16 transform transition-all text-white bg-button-main-light p-1.5 font-light italic text-xl border-border-light border-2 rounded-xl"
-          ><span>Contacto</span><img src="carta.png" class="size-12 group-hover:hidden transform transition-all" /><img src="escritura.png" class="size-14 hidden group-hover:block transform transition-all"></a>
+          ><span>Contacto</span><img
+            src="carta.png"
+            class="size-12 group-hover:hidden transform transition-all"
+          /><img
+            src="escritura.png"
+            class="size-14 hidden group-hover:block transform transition-all"
+          /></a
+        >
       </li>
     </ul>
   </section>

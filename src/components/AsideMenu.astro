@@ -15,7 +15,7 @@ interface Props {
   experience?: number;
 }
 
-const { person, alias, role1, role2, experience } = Astro.props;
+const { person = 'nombre de la persona', alias = 'nickname', role1, role2, experience } = Astro.props;
 ---
 
   <div class="z-40 rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
@@ -25,11 +25,11 @@ const { person, alias, role1, role2, experience } = Astro.props;
     <ThemeToggleButton client:visible/>
       <UserIcon />
       <h3
-        class=" hover:scale-105 duration-75 mt-2.5"
+        class=" hover:scale-105 duration-75 mt-2.5 font-bold text-base"
       >
         {person}
       </h3>
-      <span class="text-center">{alias}</span>
+      <span class="text-center text-sm font-semibold italic">{alias}</span>
       <ul class="flex flex-col items-start text-sm space-y-0.5 mt-1">
         <li
           class=" hover:scale-105 duration-75 list-disc"
@@ -44,25 +44,22 @@ const { person, alias, role1, role2, experience } = Astro.props;
         <li
           class=" hover:scale-105 duration-75 list-disc"
         >
-          Experiencia: {experience} years
+          Experiencia: {experience} Años
         </li>
       </ul>
     </div>
     <SideMenuItems href="/">
       <HomeIcon />
-      Home
+      Inicio
     </SideMenuItems>
     <SideMenuItems href="#">
       <LibraryIcon />
-      Library
+      Proyectos
     </SideMenuItems>
   </div>
 
   <div class="flex flex-col justify-stretch rounded-lg p-2 border-4 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-4">
-    <SideMenuItems href="#">
-      <LibraryIcon />
-      Tu Biblioteca
-    </SideMenuItems>
+  
     <SideMenuItems href="https://open.spotify.com/playlist/68lsszTFg2vKEV4m8jH1LV?si=g81b9z49RT-d_TkTbs-ETA">
       <Spotify />
       Lista Favorita :3
