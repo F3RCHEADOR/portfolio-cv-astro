@@ -36,7 +36,7 @@ const SideBarToggle = () => {
           toggleSideBar(); // Llamamos a la función que alterna el estado
         }}
         className={`absolute top-2 ${
-          isSideBarOpen ? "right-6 md:right-[98%] transform translate-x-1/2 " : "left-2 sm:left-24 transform translate-x-2"
+          isSideBarOpen ? "right-6 md:right-[96%] transform translate-x-1/2 " : "left-2 sm:left-24 transform translate-x-2"
         }  my-2 cursor-pointer border-2 rounded-xl p-1 bg-gray-200 dark:bg-gray-500 z-50`}
       >
         <svg

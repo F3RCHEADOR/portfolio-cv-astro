@@ -16,14 +16,17 @@ const projects = (await getCollection("project")).sort(
 
 <BlogPost>
   <section>
-    <h1
-      class="text-center transform transition-all text-3xl mt-5 font-semibold italic bg-gray-50 dark:bg-main-dark dark:text-headingg-main-dark over"
-    >
-      Proyectos Realizados
-    </h1>
+    <div class="ml-48 relative h-24">
+      <img
+        src="proyecto.png"
+        alt="#"
+        class="size-28 absolute top-2 right-1/2 "
+      />
+      <h1 class="absolute bottom-0 right-1/2 transform -translate-x-1/2 text-3xl font-bold italic dark:text-headingg-main-dark ">Proyect<span class="text-white">os</span></h1>
+    </div>
 
     <ul
-      class="max-w-screen-xl grid md:grid-cols-1 lg:grid-cols-2 mx-auto gap-y-10 gap-x-8 p-2 m-1 my-8"
+      class="max-w-screen-xl grid md:grid-cols-1 lg:grid-cols-2 mx-auto gap-y-10 gap-x-8 p-2 m-1 my-6"
     >
       {
         projects.map((project) => (
