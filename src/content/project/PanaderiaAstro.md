@@ -9,18 +9,18 @@ pubDate: 'Jul 20 2022'
 # Panadería Astro
 
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-  <div className="relative overflow-hidden rounded-lg shadow-lg">
-    <img src="/images/pan1.png" alt="Panadería Astro 1" className="w-full h-full object-cover"/>
+  <div className="relative col-span-3 overflow-hidden rounded-lg shadow-lg ">
+    <img src="/images/pan3.png" alt="Panadería Astro 1" className="w-full mx-auto object-cover"/>
     <div className="absolute inset-0 bg-black opacity-25"></div>
     <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Pan de Leche</div>
   </div>
   <div className="relative overflow-hidden rounded-lg shadow-lg">
-    <img src="/images/pan2.jpg" alt="Panadería Astro 2" className="w-full h-full object-cover"/>
+    <img src="/images/pan2.png" alt="Panadería Astro 2" className=" w-full h-full object-cover"/>
     <div className="absolute inset-0 bg-black opacity-25"></div>
     <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Croissant</div>
   </div>
-  <div className="relative overflow-hidden rounded-lg shadow-lg">
-    <img src="/images/pan3.jpg" alt="Panadería Astro 3" className="w-full h-full object-cover"/>
+  <div className="relative sm:col-span-2 md:col-span-1 overflow-hidden rounded-lg shadow-lg">
+    <img src="/images/pan1.png" alt="Panadería Astro 3" className="w-full h-full object-cover"/>
     <div className="absolute inset-0 bg-black opacity-25"></div>
     <div className="absolute bottom-0 left-0 p-4 text-white font-bold">Baguette Artesanal</div>
   </div>

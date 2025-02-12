@@ -6,6 +6,11 @@ import SideMenuItems from "./SideMenuItems.astro";
 import Letter from "@/icons/Letter.astro";
 import Spotify from "@/icons/Spotify.astro";
 import ThemeToggleButton from "./ThemeToggleButton";
+import Twitter from "@/icons/Twitter.astro";
+import Github from "@/icons/Github.astro";
+import Linkenld from "@/icons/Linkenld.astro";
+import CV from "@/icons/CV.astro";
+import IconsUtil from "@/components/IconsUtils.astro";
 
 interface Props {
   person?: string;
@@ -15,39 +20,45 @@ interface Props {
   experience?: number;
 }
 
-const { person = 'nombre de la persona', alias = 'nickname', role1, role2, experience } = Astro.props;
+const {
+  person = "nombre de la persona",
+  alias = "nickname",
+  role1,
+  role2,
+  experience,
+} = Astro.props;
 ---
 
-  <div class="z-40 rounded-lg p-2 border-4 mx-0.5 border-border-light dark:border-border-dark">
-    <div
-      class="flex flex-col items-center justify-center p-2 m-2 group  text-paragraph-light dark:text-paragraph-dark"
-    >
-    <ThemeToggleButton client:visible/>
-      <UserIcon />
-      <h3
-        class=" hover:scale-105 duration-75 mt-2.5 font-bold text-base"
-      >
-        {person}
-      </h3>
-      <span class="text-center text-sm font-semibold italic">{alias}</span>
-      <ul class="flex flex-col items-start text-sm space-y-0.5 mt-1">
-        <li
-          class=" hover:scale-105 duration-75 list-disc"
-        >
-          {role1}
-        </li>
-        <li
-          class=" hover:scale-105 duration-75 list-disc"
-        >
-          {role2}
-        </li>
-        <li
-          class=" hover:scale-105 duration-75 list-disc"
-        >
-          Experiencia: {experience} Años
-        </li>
-      </ul>
-    </div>
+<div
+  class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light dark:border-border-dark"
+>
+  <div
+    class="flex flex-col items-center justify-center p-2 m-2 group text-paragraph-light dark:text-paragraph-dark"
+  >
+    <ThemeToggleButton client:visible />
+    <UserIcon />
+    <h3 class="hover:scale-105 duration-75 mt-2.5 font-bold text-base">
+      {person}
+    </h3>
+    <span class="text-center text-sm font-semibold italic">{alias}</span>
+    <ul class="flex flex-col items-start text-sm space-y-0.5 mt-1">
+      <li class="hover:scale-105 duration-75 list-disc">
+        {role1}
+      </li>
+      <li class="hover:scale-105 duration-75 list-disc">
+        {role2}
+      </li>
+      <li class="hover:scale-105 duration-75 list-disc">
+        Experiencia: {experience} Años
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-4"
+>
+  <nav>
     <SideMenuItems href="/">
       <HomeIcon />
       Inicio
@@ -56,17 +67,24 @@ const { person = 'nombre de la persona', alias = 'nickname', role1, role2, exper
       <LibraryIcon />
       Proyectos
     </SideMenuItems>
-  </div>
-
-  <div class="flex flex-col justify-stretch rounded-lg p-2 border-4 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-4">
-  
-    <SideMenuItems href="https://open.spotify.com/playlist/68lsszTFg2vKEV4m8jH1LV?si=g81b9z49RT-d_TkTbs-ETA">
+    <SideMenuItems
+      href="https://open.spotify.com/playlist/68lsszTFg2vKEV4m8jH1LV?si=g81b9z49RT-d_TkTbs-ETA"
+    >
       <Spotify />
       Lista Favorita :3
     </SideMenuItems>
-    <SideMenuItems href="/contact" transition:name="contact" >
-      <Letter />
-     <span >Contacto</span>
+    <SideMenuItems href="/contact" transition:name="contact">
+      <CV />      <span>Mi CV</span>
     </SideMenuItems>
-  </div>
-
+    <SideMenuItems href="/contact" transition:name="contact">
+      <Letter />
+      <span>Contacto</span>
+    </SideMenuItems>
+    
+  </nav>
+  <footer class="flex items-center justify-center space-x-8 m-2 ">
+    <IconsUtil utils="Twitter" ><Twitter /></IconsUtil>
+    <IconsUtil utils="Github" ><Github /></IconsUtil>
+    <IconsUtil utils="Linkenld" ><Linkenld /></IconsUtil>
+  </footer>
+</div>
