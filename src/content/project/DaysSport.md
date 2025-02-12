@@ -1,7 +1,7 @@
 ---
 title: 'DaysSport'
 subtitle: 'E-Commerce'
-description: 'Plataforma de comercio electrónico diseñada para la venta de una amplia variedad de productos relacionados con el deporte y el bienestar. En este sitio, los usuarios pueden encontrar prendas deportivas, artículos útiles, equipamiento y dotaciones para diversos deportes, todo en un solo lugar.'
+description: 'Plataforma de comercio electrónico diseñada para la venta de una amplia variedad de productos relacionados con el deporte y el bienestar. En este sitio, los usuarios pueden encontrar prendas deportivas, artículos útiles y equipamiento.'
 utils: ['React', 'Tailwind', 'Mongo']
 heroImage: /images/pan1.png
 pubDate: 'Jul 09 2022'

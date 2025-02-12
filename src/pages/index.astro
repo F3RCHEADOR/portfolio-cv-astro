@@ -20,9 +20,13 @@ const projects = (await getCollection("project")).sort(
       <img
         src="proyecto.png"
         alt="#"
-        class="size-28 absolute top-2 right-1/2 "
+        class="size-28 absolute top-2 right-1/2"
       />
-      <h1 class="absolute bottom-0 right-1/2 transform -translate-x-1/2 text-3xl font-bold italic dark:text-headingg-main-dark ">Proyect<span class="text-white">os</span></h1>
+      <h1
+        class="absolute bottom-0 right-1/2 transform -translate-x-1/2 text-3xl font-bold italic dark:text-headingg-main-dark"
+      >
+        Proyect<span class="text-white">os</span>
+      </h1>
     </div>
 
     <ul
@@ -31,19 +35,23 @@ const projects = (await getCollection("project")).sort(
       {
         projects.map((project) => (
           <li
-            class="grid grid-cols-2 gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:border border-gray-700 "
+            class="grid grid-cols-2 gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:shadow-gray-500 "
             transition:name={`${project.id}`}
           >
-            <h3 class="col-span-2 text-center font-bold text-2xl text-headingg-main-light dark:text-headingg-main-dark">
+            <h3 class="flex items-center justify-center h-10 col-span-2 text-center font-semibold text-xl bg-blue-50 transform transition-all dark:bg-gray-800 text-heading-main-light dark:text-headingg-main-dark">
               {project.data.title}
             </h3>
-            <p class="font-medium text-base p-1 m-0.5 text-paragraph-light dark:text-paragraph-dark text-pretty tracking-wide">
+            <p class="font-medium text-base p-1 m-0.5 mt-8 text-paragraph-light dark:text-paragraph-dark text-pretty tracking-wide hover:font-semibold">
               {project.data.description}
             </p>
             <div>
-              <img src={`${project.data.heroImage}`} alt="#" />
+              <img
+                src={`${project.data.heroImage}`}
+                alt="#"
+                class="w-full h-48 mt-4 rounded-xl hover:scale-105 transform transition-all"
+              />
             </div>
-            <ul class="col-span-2 mb-4 flex flex-row items-center justify-center space-x-2 md:space-x-4 pl-2 my-2 border-b-2 border-dashed border-border-light">
+            <ul class="col-span-2 mb-2.5 flex flex-row items-center justify-center space-x-2 md:space-x-4 border-b-2 border-dashed border-border-light">
               {project.data.utils.map((tech) => (
                 <li class=" px-2 py-0.5 rounded-xl text-base cursor-pointer group duration-75 mb-2">
                   {/* Condicional para renderizar el componente correcto */}
@@ -130,19 +138,7 @@ const projects = (await getCollection("project")).sort(
           </li>
         ))
       }
-      <li class="flex mx-auto my-4 group">
-        <a
-          href="/contact"
-          class="flex space-x-2 items-center h-16 transform transition-all text-white bg-button-main-light p-1.5 font-light italic text-xl border-border-light border-2 rounded-xl"
-          ><span>Contacto</span><img
-            src="carta.png"
-            class="size-12 group-hover:hidden transform transition-all"
-          /><img
-            src="escritura.png"
-            class="size-14 hidden group-hover:block transform transition-all"
-          /></a
-        >
-      </li>
+      
     </ul>
   </section>
 </BlogPost>
