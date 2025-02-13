@@ -4,6 +4,7 @@ import AsideMenu from "../components/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import SideBarToggle from "@/components/SideBarToggle.jsx"; //
+import UpButton from "@/components/UpButton.astro";
 ---
 
 <html lang="en">
@@ -12,12 +13,12 @@ import SideBarToggle from "@/components/SideBarToggle.jsx"; //
   </head>
 
   <body
-    class="relative w-full h-screen p-2  gap-2 bg-main-light dark:bg-main-dark transform transition-all overflow-hidden"
+    class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all overflow-hidden"
   >
     <!-- Barra lateral -->
     <aside
       id="SideBar"
-      class="z-40 fixed top-2 md:top-0 left-0 w-[85%] sm:w-80 h-full flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark "
+      class="z-40 fixed top-2 md:top-0 left-0 w-[85%] sm:w-80 h-full flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
     >
       <AsideMenu
         person="Fabian Fernando Fonseca Chacon"
@@ -31,15 +32,39 @@ import SideBarToggle from "@/components/SideBarToggle.jsx"; //
     <!-- Contenido principal -->
     <main
       id="Main"
-      class="relative w-fulls rounded-lg overflow-y-auto z-10 transform transition-all h-full "
+      class="relative w-fulls rounded-lg overflow-y-auto z-10 transform transition-all h-full"
     >
+      <button
+        type="button"
+        id="upButton"
+        class="absolute z-50 bottom-4 right-5 border-2 border-border-light dark:border-gray-800 p-0.5 rounded-xl cursor-pointer"
+      >
+        <UpButton />
+      </button>
+
       <ClientRouter />
       <SideBarToggle client:load transition:animate={"none"} />
+
       <div id="screen" class="max-w-screen-xl mx-auto">
-       
-     
         <slot />
       </div>
     </main>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("upButton")
+          ?.addEventListener("click", function () {
+            console.log("click");
+            setTimeout(() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }, 100); // Asegura que haya un pequeño retraso
+          });
+      });
+    </script>
+    
+    
   </body>
 </html>
