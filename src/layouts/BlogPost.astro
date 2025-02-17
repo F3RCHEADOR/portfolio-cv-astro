@@ -34,13 +34,7 @@ import UpButton from "@/components/UpButton.astro";
       id="Main"
       class="relative w-fulls rounded-lg overflow-y-auto z-10 transform transition-all h-full"
     >
-      <button
-        type="button"
-        id="upButton"
-        class="absolute z-50 bottom-4 right-5 border-2 border-border-light dark:border-gray-800 p-0.5 rounded-xl cursor-pointer"
-      >
-        <UpButton />
-      </button>
+    
 
       <ClientRouter />
       <SideBarToggle client:load transition:animate={"none"} />

@@ -8,6 +8,7 @@ import Node from "@/icons/Node.astro";
 import Mongo from "@/icons/Mongo.astro";
 import Vite from "@/icons/Vite.astro";
 import IconsUtils from "@/components/IconsUtils.astro";
+import Github from "@/icons/Github.astro";
 
 const projects = (await getCollection("project")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -30,29 +31,21 @@ const projects = (await getCollection("project")).sort(
     </div>
 
     <ul
-      class="max-w-screen-xl grid md:grid-cols-1 lg:grid-cols-2 mx-auto gap-y-10 gap-x-8 p-2 m-1 my-6"
+      class="max-w-screen-xl grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-3 mx-auto gap-y-10 gap-x-8 p-2 sm:mx-4  my-6"
     >
       {
         projects.map((project) => (
           <li
-            class="grid grid-cols-1 md:grid-cols-2 gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:shadow-gray-800 hover:shadow-xl hover:scale-105 transform transition-all "
+            class="flex flex-col justify-evenly gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:shadow-gray-800 hover:shadow-xl hover:scale-105 transform transition-all "
             transition:name={`${project.id}`}
           >
-           <div class="col-span-2 grid grid-cols-2">
-            <h3 class="col-span-2 flex items-center justify-center h-10 text-center font-semibold text-xl bg-blue-50 transform transition-all dark:bg-gray-800 text-heading-main-light dark:text-headingg-main-dark">
-              {project.data.title}
-            </h3>
-            <p class="col-span-2 md:col-span-1 order-2 font-medium text-base p-1 m-0.5 mt-8 text-paragraph-light dark:text-paragraph-dark text-pretty tracking-wide ">
-              {project.data.description}
-            </p>
-            <div class="order-1 col-span-2 md:col-span-1">
-              <img
-                src={`${project.data.heroImage}`}
-                alt="#"
-                class="w-full h-48 mt-4 rounded-xl hover:scale-105 transform transition-all"
-              />
+            <div class="relative p-1">
+              <h1 class="bg-blue-50 text-center font-semibold italic text-xl text-heading-main-light dark:text-heading-alt-dark dark:bg-gray-900">
+                {project.data.title}
+              </h1>
+              <img src={`${project.data.heroImage}`} alt="#" class="m-1 w-full"/>
+              <p class="text-sm font-medium py-2 px-1 dark:text-paragraph-dark text-paragraph-light"> {project.data.description}</p>
             </div>
-           </div>
             <ul class="col-span-2 mb-2.5 flex flex-row items-center justify-center space-x-2 md:space-x-4 border-b-2 border-dashed border-border-light">
               {project.data.utils.map((tech) => (
                 <li class=" px-2 py-0.5 rounded-xl text-base cursor-pointer group duration-75 mb-2">
@@ -99,44 +92,34 @@ const projects = (await getCollection("project")).sort(
                 </li>
               ))}
             </ul>
-            <a
-              href={`/project/${project.id}`}
-              class="flex justify-center mx-auto h-12 w-16 mb-2.5 rounded-md items-center bg-button-main-light dark:bg-button-main-dark group hover:scale-y-105 transition-all "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-10 bg-opacity-80 text-main-light p-1 rounded-xl gropu:hover:scale-110 hover:scale-125 transition-all"
+            <div class="flex items-center justify-between">
+              {" "}
+              <a
+                href={`/project/${project.id}`}
+                class="flex justify-center mx-auto h-12 w-16 mb-2.5 rounded-md items-center border-border-light dark:border-border-dark bg-red-500 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                />
-              </svg>
-            </a>
-            <a
-              href={`/project/${project.id}`}
-              class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-main-light dark:bg-button-main-dark group hover:scale-y-105 transition-all "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-10 bg-opacity-80 text-main-light p-1 rounded-xl gropu:hover:scale-110 hover:scale-125 transition-all"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-10 bg-opacity-80 text-main-light p-1 rounded-xl gropu:hover:scale-110 hover:scale-125 transition-all"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
+                </svg>
+              </a>
+              <a
+                href={`/project/${project.id}`}
+                class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                />
-              </svg>
-            </a>
+                <Github />
+              </a>
+            </div>
           </li>
         ))
       }
