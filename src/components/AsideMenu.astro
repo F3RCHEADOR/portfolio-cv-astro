@@ -1,5 +1,4 @@
 ---
-import HomeIcon from "@/icons/Home.astro";
 import LibraryIcon from "@/icons/Library.astro";
 import UserIcon from "@/icons/User.astro";
 import SideMenuItems from "./SideMenuItems.astro";
@@ -30,7 +29,7 @@ const {
 ---
 
 <div
-  class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light dark:border-border-dark overflow-auto"
+  class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light dark:border-border-dark"
 >
   <div
     class="flex flex-col items-center justify-center p-2 m-2 group text-paragraph-light dark:text-paragraph-dark"
@@ -56,11 +55,11 @@ const {
 </div>
 
 <div
-  class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4"
+  class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4 overflow-auto"
 >
   <nav>
    
-    <SideMenuItems href="#">
+    <SideMenuItems href="/">
       <LibraryIcon />
       Proyectos
     </SideMenuItems>

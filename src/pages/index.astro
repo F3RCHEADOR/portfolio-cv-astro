@@ -8,6 +8,7 @@ import Node from "@/icons/Node.astro";
 import Mongo from "@/icons/Mongo.astro";
 import Vite from "@/icons/Vite.astro";
 import IconsUtils from "@/components/IconsUtils.astro";
+import LinkTo from "@/icons/LinkTo.astro";
 import Github from "@/icons/Github.astro";
 
 const projects = (await getCollection("project")).sort(
@@ -31,7 +32,7 @@ const projects = (await getCollection("project")).sort(
     </div>
 
     <ul
-      class="max-w-screen-xl grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-3 mx-auto gap-y-10 gap-x-8 p-2 sm:mx-4  my-6"
+      class="max-w-screen-xl grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-8 p-2 mx-4 my-6"
     >
       {
         projects.map((project) => (
@@ -43,8 +44,15 @@ const projects = (await getCollection("project")).sort(
               <h1 class="bg-blue-50 text-center font-semibold italic text-xl text-heading-main-light dark:text-heading-alt-dark dark:bg-gray-900">
                 {project.data.title}
               </h1>
-              <img src={`${project.data.heroImage}`} alt="#" class="m-1 w-full"/>
-              <p class="text-sm font-medium py-2 px-1 dark:text-paragraph-dark text-paragraph-light"> {project.data.description}</p>
+              <img
+                src={`${project.data.heroImage}`}
+                alt="#"
+                class="m-1 w-full"
+              />
+              <p class="text-sm font-medium py-2 px-1 dark:text-paragraph-dark text-paragraph-light">
+                {" "}
+                {project.data.description}
+              </p>
             </div>
             <ul class="col-span-2 mb-2.5 flex flex-row items-center justify-center space-x-2 md:space-x-4 border-b-2 border-dashed border-border-light">
               {project.data.utils.map((tech) => (
@@ -96,28 +104,21 @@ const projects = (await getCollection("project")).sort(
               {" "}
               <a
                 href={`/project/${project.id}`}
-                class="flex justify-center mx-auto h-12 w-16 mb-2.5 rounded-md items-center border-border-light dark:border-border-dark bg-red-500 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
+                class="flex justify-center mx-auto h-12 w-14 mb-2.5 rounded-md items-center border-border-light dark:border-border-dark bg-red-500 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-10 bg-opacity-80 text-main-light p-1 rounded-xl gropu:hover:scale-110 hover:scale-125 transition-all"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
+                <IconsUtils utils="Ver">
+                  {" "}
+                  <LinkTo />
+                </IconsUtils>
+                
               </a>
               <a
                 href={`/project/${project.id}`}
                 class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
               >
-                <Github />
+                <IconsUtils utils="Repo">
+                  <Github />
+                </IconsUtils>
               </a>
             </div>
           </li>
