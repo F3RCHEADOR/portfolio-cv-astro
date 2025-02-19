@@ -35,20 +35,42 @@ const {
     class="flex flex-col items-center justify-center p-2 m-2 group text-paragraph-light dark:text-paragraph-dark"
   >
     <ThemeToggleButton client:visible />
-    <UserIcon />
-    <h3 class="hover:scale-105 duration-75 mt-2.5 font-bold text-base">
+    <div class="max-w-56 rounded-full overflow-hidden p-2">
+      <img
+        src="../images/avatar.png"
+        alt="avatar"
+        class="rounded-full border-2 hover:border-6 mx-auto w-full hover:scale-110 transition-all"
+      />
+    </div>
+
+    <h3 class="hover:scale-105 duration-75 mt-2.5 font-bold text-base text-clip text-center">
       {person}
     </h3>
     <span class="text-center text-sm font-semibold italic">{alias}</span>
-    <ul class="flex flex-col items-start text-sm space-y-0.5 mt-1">
-      <li class="hover:scale-105 duration-75 list-disc">
-        {role1}
+    <ul class="flex flex-col items-start space-y-1 mt-2 w-full ml-2 sm:ml-8">
+      <li class="flex items-center justify-center transform transition-all group-hover:bg-slate-100 dark:group-hover:bg-gray-800 w-f">
+        <button
+          class="w-10 h-8 bg-button-main-light group-hover:opacity-80 hover:opacity-60 rounded-md flex items-center justify-center mx-auto transition-all"
+        >
+          <span class="text-white text-xl font-bold">{role1?.charAt(0)}</span>
+        </button>
+        <p class="mx-1 text-base font-medium">{role1?.slice(1)}</p>
       </li>
-      <li class="hover:scale-105 duration-75 list-disc">
-        {role2}
+      <li class="flex items-center transform transition-all">
+        <button
+          class="w-10 h-8 bg-button-main-light group-hover:opacity-80 hover:opacity-60 rounded-md flex items-center justify-center mx-auto transition-all"
+        >
+          <span class="text-white text-xl font-bold">{role2?.charAt(0)}</span>
+        </button>
+        <p class="mx-1 text-base font-medium">{role2?.slice(1)}</p>
       </li>
-      <li class="hover:scale-105 duration-75 list-disc">
-        Experiencia: {experience} Años
+      <li class="flex items-center justify-center transform transition-all">
+        <button
+          class="w-10 h-8 bg-button-main-light group-hover:opacity-80 hover:opacity-60 rounded-md flex items-center justify-center mx-auto transition-all"
+          ><span class="text-white text-xl font-bold">{experience}</span
+          ></button
+        >
+        <p class="mx-1 text-base font-medium">De Experiencia</p>
       </li>
     </ul>
   </div>
@@ -58,7 +80,6 @@ const {
   class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4 overflow-auto"
 >
   <nav>
-   
     <SideMenuItems href="/">
       <LibraryIcon />
       Proyectos
@@ -70,17 +91,17 @@ const {
       Lista Favorita :3
     </SideMenuItems>
     <SideMenuItems href="/contact" transition:name="contact">
-      <CV />      <span>Mi CV</span>
+      <CV />
+      <span>Mi CV</span>
     </SideMenuItems>
     <SideMenuItems href="/contact" transition:name="contact">
       <Letter />
       <span>Contacto</span>
     </SideMenuItems>
-    
   </nav>
   <footer class="flex items-center justify-center space-x-8 m-2 pb-8 md:pb-0">
-    <IconsUtil utils="Twitter" ><Twitter /></IconsUtil>
-    <IconsUtil utils="Github" ><Github /></IconsUtil>
-    <IconsUtil utils="Linkenld" ><Linkenld /></IconsUtil>
+    <IconsUtil utils="Twitter"><Twitter /></IconsUtil>
+    <IconsUtil utils="Github"><Github /></IconsUtil>
+    <IconsUtil utils="Linkenld"><Linkenld /></IconsUtil>
   </footer>
 </div>
