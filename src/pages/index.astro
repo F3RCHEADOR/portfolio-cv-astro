@@ -37,11 +37,11 @@ const projects = (await getCollection("project")).sort(
       {
         projects.map((project) => (
           <li
-            class="flex flex-col justify-evenly gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:shadow-gray-800 hover:shadow-xl hover:scale-105 transform transition-all "
-            transition:name={`${project.id}`}
+            class="flex flex-col justify-evenly gap-x-4 shadow-md px-2.5 py-2 rounded-lg dark:shadow-gray-800 hover:shadow-xl hover:scale-105 transform transition-all dark:bg-gray-800"
+        
           >
             <div class="relative p-1">
-              <h1 class="bg-blue-50 text-center font-semibold italic text-xl text-heading-main-light dark:text-heading-alt-dark dark:bg-gray-900">
+              <h1 transition:name={`${project.id}`} class="bg-blue-50 text-center font-semibold italic text-xl text-heading-main-light dark:text-heading-alt-dark dark:bg-gray-900">
                 {project.data.title}
               </h1>
               <img

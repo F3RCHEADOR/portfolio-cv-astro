@@ -32,7 +32,7 @@ const {
   class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light dark:border-border-dark"
 >
   <div
-    class="flex flex-col items-center justify-center p-2 m-2 group text-paragraph-light dark:text-paragraph-dark"
+    class="flex flex-col items-center justify-center  text-paragraph-light dark:text-paragraph-dark"
   >
     <ThemeToggleButton client:visible />
     <div class="max-w-56 rounded-full overflow-hidden p-2">
@@ -43,30 +43,36 @@ const {
       />
     </div>
 
-    <h3 class="hover:scale-105 duration-75 mt-2.5 font-bold text-base text-clip text-center">
+    <h3
+      class="hover:scale-105 duration-75 mt-2.5 font-bold text-base text-clip text-center"
+    >
       {person}
     </h3>
     <span class="text-center text-sm font-semibold italic">{alias}</span>
-    <ul class="flex flex-col items-start space-y-1 mt-2 w-full ml-2 sm:ml-8">
-      <li class="flex items-center justify-center transform transition-all group-hover:bg-slate-100 dark:group-hover:bg-gray-800 w-f">
+    <ul class="flex flex-col space-y-1 w-full select-none">
+      <li
+        class="inline-flex mx-auto items-center justify-start group transform transition-all hover:bg-slate-100 dark:hover:bg-gray-800 w-full hover:pr-4"
+      >
         <button
-          class="w-10 h-8 bg-button-main-light group-hover:opacity-80 hover:opacity-60 rounded-md flex items-center justify-center mx-auto transition-all"
+          class="w-10 h-8 group-hover:ml-2  bg-button-main-light hover:opacity-80  rounded-md  transition-all"
         >
           <span class="text-white text-xl font-bold">{role1?.charAt(0)}</span>
         </button>
-        <p class="mx-1 text-base font-medium">{role1?.slice(1)}</p>
+        <p class="mx-1 text-base  font-medium">{role1?.slice(1)}</p>
       </li>
-      <li class="flex items-center transform transition-all">
+      <li
+        class="inline-flex mx-auto group items-center justify-start transform transition-all hover:bg-slate-100 dark:hover:bg-gray-800 w-full"
+      >
         <button
-          class="w-10 h-8 bg-button-main-light group-hover:opacity-80 hover:opacity-60 rounded-md flex items-center justify-center mx-auto transition-all"
+          class="w-10 h-8 bg-button-main-light group-hover:ml-2  hover:opacity-80  rounded-md  transition-all"
         >
           <span class="text-white text-xl font-bold">{role2?.charAt(0)}</span>
         </button>
         <p class="mx-1 text-base font-medium">{role2?.slice(1)}</p>
       </li>
-      <li class="flex items-center justify-center transform transition-all">
+      <li class="inline-flex mx-auto group items-center justify-start transform transition-all hover:bg-slate-100 dark:hover:bg-gray-800 w-full">
         <button
-          class="w-10 h-8 bg-button-main-light group-hover:opacity-80 hover:opacity-60 rounded-md flex items-center justify-center mx-auto transition-all"
+          class="w-10 h-8 bg-button-main-light group-hover:ml-2  hover:opacity-80  rounded-md  transition-all"
           ><span class="text-white text-xl font-bold">{experience}</span
           ></button
         >
