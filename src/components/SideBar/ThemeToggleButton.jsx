@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useStore } from "@nanostores/react";
-import { themeStore, toggleTheme } from "../themeStore"; // Importa el store
+import { themeStore, toggleTheme } from "@/themeStore"; // Importa el store
 
 const ThemeToggleButton = () => {
   // Obtener el estado del tema desde el store

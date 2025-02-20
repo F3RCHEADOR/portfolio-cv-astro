@@ -1,10 +1,9 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import AsideMenu from "../components/AsideMenu.astro";
+import AsideMenu from "@/components/SideBar/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
-import SideBarToggle from "@/components/SideBarToggle.jsx"; //
-import UpButton from "@/components/UpButton.astro";
+import SideBarToggle from "@/components/SideBar/SideBarToggle.jsx"; //
 ---
 
 <html lang="en">
@@ -18,7 +17,7 @@ import UpButton from "@/components/UpButton.astro";
     <!-- Barra lateral -->
     <aside
       id="SideBar"
-      class="z-40 fixed top-2 md:top-0 left-0 w-[85%] sm:w-80 h-full flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
+      class="z-40 fixed top-2 md:top-0 left-0 w-[85%] sm:w-80 h-full overflow-auto flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
     >
       <AsideMenu
         person="Fabian Fernando Fonseca Chacon"
