@@ -39,7 +39,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className=" relative max-w-screen-xl h-screen  mx-auto p-8 bg-main-light dark:bg-main-dark transform transition-all ">
+    <section className={`relative w-full  sm:h-[90dvh]  p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all sm:mb-4`}>
       <div id="contact" className="text-center">
         {formSubmitted ? (
           <div className="flex flex-row items-center justify-center space-x-2.5 shadow-md hover:shadow-lg shadow-teal-300 dark:shadow-gray-600 hover:scale-105 transition-all absolute top-1/2 right-1/2 transform -translate-y-1/2 translate-x-1/2 h-auto px-6 py-4">
@@ -64,7 +64,7 @@ const ContactForm = () => {
             <form
               id="contact-form"
               onSubmit={handleSubmit}
-              className="space-y-8 w-full max-w-screen-lg mx-auto rounded-xl p-6 shadow-sm shadow-teal-200 dark:shadow-gray-600 bg-white dark:bg-main-dark transition-all hover:shadow-lg"
+              className="space-y-8 w-full max-w-screen-lg mx-auto rounded-xl p-6 shadow-sm shadow-teal-200 dark:shadow-gray-600 bg-white dark:bg-main-dark transition-all hover:shadow-lg mb-4 overflow-auto"
             >
               {/* Name Field */}
               <div className="mb-6">
@@ -144,7 +144,7 @@ const ContactForm = () => {
                   onChange={handleChange}
                   className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark hover:scale-105 dark:text-white dark:bg-gray-600"
                   placeholder="Tu Mensaje"
-                  rows="6"
+                  rows="4"
                   required
                 ></textarea>
               </div>

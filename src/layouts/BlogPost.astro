@@ -39,7 +39,7 @@ import Footer from "@/components/Footer.astro";
       <ClientRouter />
       <SideBarToggle client:load transition:animate={"none"} />
 
-      <div id="screen" class=" justify-between max-w-screen-xl mx-auto ">
+      <div id="screen" class="flex flex-col items-center justify-between max-w-screen-xl mx-auto ">
         <slot />
         <Footer />
       </div>
