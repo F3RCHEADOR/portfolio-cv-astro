@@ -4,6 +4,7 @@ import AsideMenu from "@/components/SideBar/AsideMenu.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import SideBarToggle from "@/components/SideBar/SideBarToggle.jsx"; //
+import Footer from "@/components/Footer.astro";
 ---
 
 <html lang="en">
@@ -38,25 +39,12 @@ import SideBarToggle from "@/components/SideBar/SideBarToggle.jsx"; //
       <ClientRouter />
       <SideBarToggle client:load transition:animate={"none"} />
 
-      <div id="screen" class="max-w-screen-xl mx-auto">
+      <div id="screen" class=" justify-between max-w-screen-xl mx-auto ">
         <slot />
+        <Footer />
       </div>
     </main>
-    <script is:inline>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("upButton")
-          ?.addEventListener("click", function () {
-            console.log("click");
-            setTimeout(() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }, 100); // Asegura que haya un pequeño retraso
-          });
-      });
-    </script>
+
     
     
   </body>

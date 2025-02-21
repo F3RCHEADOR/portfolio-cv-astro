@@ -101,11 +101,11 @@ const projects = (await getCollection("project")).sort(
                 </li>
               ))}
             </ul>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-center">
               {" "}
               <a
                 href={`/project/${project.id}`}
-                class="flex justify-center mx-auto h-12 w-14 mb-2.5 rounded-md items-center border-border-light dark:border-border-dark bg-red-500 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
+                class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-red-500 border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
               >
                 <IconsUtils utils="Ver">
                   {" "}
