@@ -11,7 +11,7 @@ const ProjectsList = ({ projects }) => {
       {projects.map((project) => {
         // Si isSelectedIcon es nulo, mostrar todos los proyectos, si no, comprobar si está incluido en 'utils'
         const shouldRenderProject =
-          isSelectedIcon === null || project.data.utils.some((tech) => tech === isSelectedIcon);
+          isSelectedIcon === null || project.data.utils.some((tech) => tech === isSelectedIcon || isSelectedIcon === 'Ver' || isSelectedIcon === 'Repo' );
 
         return shouldRenderProject ? (
           <CardProject key={project.id} project={project} client:load />
