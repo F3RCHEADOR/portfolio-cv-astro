@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 const ContactForm = () => {
+  const [isSend, setIsSend] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +11,12 @@ const ContactForm = () => {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  // Maneja el estado de 'isSend' cuando se envía el formulario
+  const handleSendState = () => {
+    setIsSend(true);  // Cambia el estado a true cuando se haya enviado el formulario
+  };
+
+  // Maneja los cambios en los campos del formulario
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -17,6 +24,7 @@ const ContactForm = () => {
     });
   };
 
+  // Maneja el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("enviando");
@@ -32,6 +40,7 @@ const ContactForm = () => {
       .then((response) => {
         console.log("Correo enviado!", response);
         setFormSubmitted(true);
+        handleSendState(); // Cambiar el estado de 'isSend' después de enviar el correo
       })
       .catch((err) => {
         console.error("Error al enviar el correo:", err);
@@ -39,7 +48,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className={`relative w-full  sm:h-[90dvh]  p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all sm:mb-4`}>
+    <section className="relative w-full sm:h-[90dvh] p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all sm:mb-4">
       <div id="contact" className="text-center">
         {formSubmitted ? (
           <div className="flex flex-row items-center justify-center space-x-2.5 shadow-md hover:shadow-lg shadow-teal-300 dark:shadow-gray-600 hover:scale-105 transition-all absolute top-1/2 right-1/2 transform -translate-y-1/2 translate-x-1/2 h-auto px-6 py-4">
@@ -80,7 +89,7 @@ const ContactForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-2 block w-full px-6 py-3 border hover:border-4  focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
+                  className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
                   placeholder="Harry Potter / Howards"
                   required
                 />
@@ -152,9 +161,10 @@ const ContactForm = () => {
               <div>
                 <button
                   type="submit"
+                  disabled={isSend}  // Deshabilitar el botón si ya se ha enviado el formulario
                   className="w-full bg-button-main-light dark:bg-button-main-dark text-white py-4 px-8 rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-all"
                 >
-                  Enviar
+                  {isSend ? "Enviando..." : "Enviar"}
                 </button>
               </div>
             </form>

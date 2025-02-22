@@ -4,6 +4,7 @@ subtitle: 'Website'
 description: 'Web-Site de Panadería desarrollado con Astro. Inspirado en otra panadería Europea, es una aproximación de página de panadería con tecnologías de Astro integradas.'
 heroImage: /images/pan3.png
 utils: ['Astro', 'Tailwind']
+repo: https://github.com/F3RCHEADOR/Migas-d-angeles
 pubDate: 'Jul 20 2022'
 ---
 # Panadería Astro

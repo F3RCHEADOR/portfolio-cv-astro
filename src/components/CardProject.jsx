@@ -36,7 +36,7 @@ const CardProject = ({ project }) => {
           </IconsUtils>
         </a>
         <a
-          href={`/project/${project.id}`}
+          href={`${project.data.repo}`}
           className="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
         >
           <IconsUtils utils="Repo">

@@ -3,6 +3,7 @@ title: 'Portfolio'
 subtitle: 'Portfolio para devs'
 description: 'Este es un pequeño proyecto personal en el que desarrollé una plantilla de portfolio responsive hecha en Astro con Tailwind para desarrolladores que quieran mostrar sus proyectos y no tengan mucho tiempo. Además, es de código abierto por si alguien quiere crear algo, mejorarlo o simplemente adaptarlo según su preferencia.'
 utils: ['Astro', 'Tailwind', 'React']
+repo: https://github.com/F3RCHEADOR/portfolio-cv-astro
 heroImage: /images/pan1.png
 pubDate: 'Feb 09 2025'
 ---

@@ -4,6 +4,7 @@ subtitle: 'Sistema POS'
 description: 'Es un innovador proyecto de gestión de puntos de venta (POS) diseñado especialmente para restaurantes, bares, panaderías, locales de comida rápida, y otros tipos de negocios del sector alimenticio.'
 heroImage: /images/pan1.png
 utils: ['React', 'Tailwind', 'Mongo']
+repo: no
 pubDate: 'Jul 08 2022'
 ---
 
