@@ -1,33 +1,95 @@
-import React from 'react';
-import { useStore } from '@nanostores/react';
-import { selectedTools } from '@/filterStore.js';
-
-// Lista de herramientas disponibles
-const tools = ["Tailwind", "React", "Astro", "Node", "Mongo", "Vite"];
+import AstroIcon from "../../IconsJsx/AstroIcon.jsx";
+import Tailwind from "../../IconsJsx/TailwindCss.jsx";
+import ReactIcon from "../../IconsJsx/React.jsx";
+import Mongo from "../../IconsJsx/Mongo.jsx";
+import { selectedIcon } from "@/filterStore.js";
+import { useStore } from "@nanostores/react";
+import { useState } from "react";
 
 const Filter = () => {
-  const $selectedTools = useStore(selectedTools); // Usamos el store para mantener el estado reactivo
+  const [isMenuVisible, setIsMenuVisible] = useState(false); // Menú inicialmente visible
+  const isSelectedIcon = useStore(selectedIcon); // Acceder al estado reactivo
 
-  const toggleTool = (tool) => {
-    console.log('click')
-    if ($selectedTools.includes(tool)) {
-      selectedTools.set($selectedTools.filter(t => t !== tool)); // Si está seleccionada, la eliminamos
-    } else {
-      selectedTools.set([...$selectedTools, tool]); // Si no está seleccionada, la agregamos
-    }
+  // Alternar el estado de un icono individual
+  const HandleIcon = (tool) => {
+    selectedIcon.set(tool); // Alternar solo el estado del icono seleccionado
+    console.log(selectedIcon);
+  };
+
+  const HandleMenu = () => {
+    setIsMenuVisible(!isMenuVisible); // Alternar visibilidad del menú
   };
 
   return (
-    <div className="filter-buttons">
-      {tools.map((tool) => (
-        <button
-          key={tool}
-          onClick={() => toggleTool(tool)}
-          className={`filter-button ${$selectedTools.includes(tool) ? 'active' : ''} cursor-pointer `}
+    <div className="ml-10 max-w-xs relative h-6 transform transition-all p-2 ">
+      <button
+        onClick={HandleMenu}
+        className={`absolute top-0 z-50 transition-all duration-300 ${
+          !isMenuVisible ? "left-0 rotate-0" : "right-4 rotate-180" // La rotación será más suave
+        } transform cursor-pointer border-y rounded p-0.5 bg-white`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+          stroke="currentColor"
+          className="size-7"
         >
-          {tool}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          ></path>
+        </svg>
+      </button>
+
+      <div
+        className={`absolute top-0 flex items-center justify-evenly w-[85%] transition-all duration-300 ${
+          isMenuVisible ? "opacity-100" : "opacity-0 pointer-events-none" // Transición más suave con opacidad
+        }`}
+      >
+        {/* Botones de los iconos */}
+        <button
+          onClick={() => HandleIcon("Astro")}
+          className={`${
+            isMenuVisible ? "cursor-pointer" : "cursor-not-allowed"
+          }  focus:border border-border-light dark:border-gray-600 rounded-full p-1`}
+          disabled={!isMenuVisible}
+        >
+          <AstroIcon />
         </button>
-      ))}
+
+        <button
+          onClick={() => HandleIcon("Tailwind")}
+          className={`${
+            isMenuVisible ? "cursor-pointer" : "cursor-not-allowed"
+          } focus:border border-border-light dark:border-gray-600 rounded-full p-1 `}
+          disabled={!isMenuVisible}
+        >
+          <Tailwind />
+        </button>
+
+        <button
+          onClick={() => HandleIcon("React")}
+          className={`${
+            isMenuVisible ? "cursor-pointer" : "cursor-not-allowed"
+          }  focus:border border-border-light dark:border-gray-600 rounded-full p-1`}
+          disabled={!isMenuVisible}
+        >
+          <ReactIcon />
+        </button>
+
+        <button
+          onClick={() => HandleIcon("Mongo")}
+          className={`${
+            isMenuVisible ? "cursor-pointer" : "cursor-not-allowed"
+          } focus:border border-border-light dark:border-gray-600 rounded-full p-1`}
+          disabled={!isMenuVisible}
+        >
+          <Mongo />
+        </button>
+      </div>
     </div>
   );
 };
