@@ -8,8 +8,9 @@ import Twitter from "@/icons/Twitter.astro";
 import Github from "@/icons/Github.astro";
 import Linkenld from "@/icons/Linkenld.astro";
 import CV from "@/icons/CV.astro";
-import IconsUtil from "@/components/Utils/IconsUtils.astro";
 import SideLi from "@/components/SideBar/SideLi.astro";
+import SideMenuModal from "./SideMenuModal.astro";
+import IconsUtil from "../Utils/IconsUtils.astro";
 
 interface Props {
   person?: string;
@@ -76,25 +77,36 @@ const {
   class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4 overflow-auto"
 >
   <nav>
+    <!-- Enlace de Inicio - Proyectos -->
     <SideMenuItems href="/">
       <LibraryIcon />
       Proyectos
     </SideMenuItems>
+
+    <!-- Enlace al CV -->
+    <SideMenuItems href="/contact">
+      <CV />
+      <span>Mi CV</span>
+    </SideMenuItems>
+
+    <!-- Enlace de Contacto -->
+    <SideMenuItems href="/contact" transition:name="contact">
+      <Letter />
+      <span>Contacto</span>
+    </SideMenuItems>
+
+    <!-- Modal con información adicional -->
+    <SideMenuModal empresa="DigitelConect@" url="Certificado1-FFF.pdf" />
+
+    <!-- Enlace a Spotify - último elemento -->
     <SideMenuItems
       href="https://open.spotify.com/playlist/68lsszTFg2vKEV4m8jH1LV?si=g81b9z49RT-d_TkTbs-ETA"
     >
       <Spotify />
       Lista Favorita :3
     </SideMenuItems>
-    <SideMenuItems href="/contact" >
-      <CV />
-      <span>Mi CV</span>
-    </SideMenuItems>
-    <SideMenuItems href="/contact" transition:name="contact">
-      <Letter />
-      <span>Contacto</span>
-    </SideMenuItems>
   </nav>
+
   <footer class="flex items-center justify-center space-x-8 m-2 pb-8 md:pb-0">
     <IconsUtil utils="Twitter"><Twitter /></IconsUtil>
     <IconsUtil utils="Github"><Github /></IconsUtil>

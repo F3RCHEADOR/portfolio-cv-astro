@@ -3,8 +3,8 @@ const MongoDB = (props) => (
   <svg
     viewBox="0 0 256 549"
     xmlns="http://www.w3.org/2000/svg"
-    width="2em"
-    height="2em"
+    width="1.5em"
+    height="1.5em"
     preserveAspectRatio="xMidYMid"
     {...props}
   >

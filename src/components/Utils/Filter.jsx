@@ -21,10 +21,10 @@ const Filter = () => {
   };
 
   return (
-    <div className="ml-4 md:ml-10 mt-8 -mb-4 md:mt-0 max-w-xs relative h-6 transform transition-all p-2 ">
+    <div className="flex ml-4 md:ml-10 mt-8 -mb-4 md:mt-0 md:max-w-xs  mx-auto relative h-6 transform transition-all p-2 ">
       <button
         onClick={HandleMenu}
-        className={`absolute top-0 z-50 transition-all duration-300 ${
+        className={`absolute top-0 z-50 transition-all duration-300  ${
           !isMenuVisible ? "left-0 rotate-0" : "right-4 rotate-180" // La rotación será más suave
         } transform cursor-pointer border-y rounded p-0.5 bg-white`}
       >
