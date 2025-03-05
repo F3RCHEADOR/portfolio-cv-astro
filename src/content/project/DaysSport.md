@@ -3,7 +3,7 @@ title: 'DaysSport'
 subtitle: 'E-Commerce'
 description: 'Plataforma de comercio electrónico diseñada para la venta de una amplia variedad de productos relacionados con el deporte y el bienestar. En este sitio, los usuarios pueden encontrar prendas deportivas, artículos útiles y equipamiento.'
 utils: ['React', 'Tailwind', 'Mongo']
-heroImage: /images/pan1.png
+heroImage: /images/DaysSport/heroDays.png
 pubDate: 'Jul 09 2022'
 deployed: true
 url: https://dayssport.co/
@@ -26,6 +26,24 @@ La plataforma **DaysSport** ofrece una serie de características clave para faci
 
 - **Carrito de compras y pagos seguros**: Los usuarios pueden añadir productos al carrito, realizar compras de manera sencilla y completar el pago de forma segura mediante la integración con **Stripe**, garantizando transacciones rápidas y protegidas.
 
+<div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+  <div className="flex flex-col ">
+   <div class="flex flex-col text-center">
+    <img src="/images/DaysSport/heroDays.png" alt="Panadería Astro 1" className="w-full mx-auto object-cover shadow-lg hover:scale-105 transform transition-all  p-1 rounded-lg"/>
+    <span class="-mt-7">Hero / Banner Days</span>
+   </div>
+   <div class="flex flex-col text-center">
+     <img src="/images/DaysSport/GestionDays.png" alt="Panadería Astro 2" className=" w-full h-full object-cover shadow-lg hover:scale-105 transform transition-all  p-1 rounded-lg"/>
+     <span class="-mt-7">Managment Days</span>
+  </div>
+  </div>
+  <div className="flex flex-col overflow-hidden min-h-full mx-auto
+  ">
+    <img src="/images/DaysSport/MovilDays.png" alt="Panadería Astro 3" className=" flex hover:scale-105 transform transition-all  flex-col items-center rounded-lg justify-center my-auto object-cover p-1 shadow-lg"/>
+    <span class="-mt-7 text-nowrap text-center">Responsive Days</span>
+  </div>
+</div>
+
 ## Tecnologías Utilizadas
 
 La plataforma **DaysSport** está construida utilizando un conjunto de tecnologías modernas que aseguran una experiencia de usuario fluida y un rendimiento óptimo:
@@ -37,7 +55,6 @@ La plataforma **DaysSport** está construida utilizando un conjunto de tecnolog�
 - **Tailwind CSS**: Para diseñar una interfaz moderna, adaptativa y fácil de usar.
 - **MongoDB**: Como base de datos NoSQL para gestionar el inventario y las transacciones de manera escalable.
 
-![blog placeholder](/Daysbg.png)
 
 
 ## Ventajas de E-Commerce DaysSport
