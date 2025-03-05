@@ -21,7 +21,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="ml-10 max-w-xs relative h-6 transform transition-all p-2 ">
+    <div className="ml-4 md:ml-10 mt-8 -mb-4 md:mt-0 max-w-xs relative h-6 transform transition-all p-2 ">
       <button
         onClick={HandleMenu}
         className={`absolute top-0 z-50 transition-all duration-300 ${
