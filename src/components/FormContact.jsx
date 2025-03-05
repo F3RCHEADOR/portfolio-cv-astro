@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 const ContactForm = () => {
+  const [clicked, setClicked] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,37 +10,44 @@ const ContactForm = () => {
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    setClicked(true);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("enviando");
 
-    // Enviar el formulario con EmailJS
+   
+    setLoading(true);
+
+    
     emailjs
       .sendForm(
-        "service_zh1jdcq", // Reemplaza con tu ID de servicio de EmailJS
-        "template_7logs7a", // Reemplaza con tu ID de plantilla de EmailJS
+        "service_zh1jdcq", 
+        "template_7logs7a", 
         e.target,
-        "VVZVfkZgBbT8YhYog" // Reemplaza con tu User ID de EmailJS
+        "VVZVfkZgBbT8YhYog" 
       )
       .then((response) => {
         console.log("Correo enviado!", response);
         setFormSubmitted(true);
+        setLoading(false); 
       })
       .catch((err) => {
         console.error("Error al enviar el correo:", err);
+        setLoading(false); 
       });
   };
 
   return (
-    <section className={`relative w-full  sm:h-[90dvh]  p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all sm:mb-4`}>
+    <section className="relative w-full sm:h-[90dvh] p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all sm:mb-4">
       <div id="contact" className="text-center">
         {formSubmitted ? (
           <div className="flex flex-row items-center justify-center space-x-2.5 shadow-md hover:shadow-lg shadow-teal-300 dark:shadow-gray-600 hover:scale-105 transition-all absolute top-1/2 right-1/2 transform -translate-y-1/2 translate-x-1/2 h-auto px-6 py-4">
@@ -80,7 +88,7 @@ const ContactForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-2 block w-full px-6 py-3 border hover:border-4  focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
+                  className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
                   placeholder="Harry Potter / Howards"
                   required
                 />
@@ -153,8 +161,9 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   className="w-full bg-button-main-light dark:bg-button-main-dark text-white py-4 px-8 rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-all"
+                  disabled={loading || !formData.name || !formData.email || !formData.message}  // Deshabilitar si falta algo o está cargando
                 >
-                  Enviar
+                  {loading ? "Enviando..." : "Enviar"}
                 </button>
               </div>
             </form>

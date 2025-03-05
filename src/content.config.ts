@@ -25,6 +25,8 @@ const project = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		deployed: z.boolean().optional(),
+		url: z.string().optional(),
 	})
 })
 

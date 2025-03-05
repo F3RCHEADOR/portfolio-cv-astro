@@ -5,6 +5,8 @@ description: 'Plataforma de comercio electrónico diseñada para la venta de una
 utils: ['React', 'Tailwind', 'Mongo']
 heroImage: /images/pan1.png
 pubDate: 'Jul 09 2022'
+deployed: true
+url: https://dayssport.co/
 ---
 
 # E-Commerce DaysSport

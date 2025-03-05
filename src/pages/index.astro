@@ -8,9 +8,8 @@ import Node from "@/icons/Node.astro";
 import Mongo from "@/icons/Mongo.astro";
 import Vite from "@/icons/Vite.astro";
 import IconsUtils from "@/components/Utils/IconsUtils.astro";
-import LinkTo from "@/icons/LinkTo.astro";
-import Github from "@/icons/Github.astro";
-import Filter from "@/components/Utils/Filter";
+import ButtonsCards from "@/components/ButtonsCards.astro";
+import { boolean } from "astro:schema";
 
 const projects = (await getCollection("project")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -31,7 +30,6 @@ const projects = (await getCollection("project")).sort(
         Proyect<span class="text-white">os</span>
       </h1>
     </div>
-    <Filter client:load />
     <ul
       class="max-w-screen-xl grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-8 p-2 mx-4 my-6"
     >
@@ -102,26 +100,14 @@ const projects = (await getCollection("project")).sort(
                 </li>
               ))}
             </ul>
-            <div class="flex items-center justify-center">
-              {" "}
-              <a
-                href={`/project/${project.id}`}
-                class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-red-500 border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
-              >
-                <IconsUtils utils="Ver">
-                  {" "}
-                  <LinkTo />
-                </IconsUtils>
-              </a>
-              <a
-                href={`/project/${project.id}`}
-                class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all "
-              >
-                <IconsUtils utils="Repo">
-                  <Github />
-                </IconsUtils>
-              </a>
-            </div>
+            <ButtonsCards
+              id={`${project.id}`}
+              utilMD="Ver MD"
+              utilGit="Ver Repo"
+              utilLink="Ver Pagina"
+              url={`${project.data.url}`}
+              deployed={project.data.deployed || false}
+            />
           </li>
         ))
       }
