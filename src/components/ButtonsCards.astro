@@ -9,19 +9,20 @@ interface Props {
   id: string,
   utilMD: string,
   utilGit: string,
+  urlGithub?: string,
   utilLink: string,
-  url: string,
+  urlDeployed: string,
   deployed : boolean
 }
 
-const { id = "" ,utilMD = "", utilGit = "", utilLink = "" ,url = "", deployed = false } = Astro.props;
+const { id = "" ,utilMD = "", utilGit = "", utilLink = "" ,urlDeployed = "", deployed = false, urlGithub = "#" } = Astro.props;
 ---
 
 <div class="flex items-center justify-center">
   {deployed && (
     <a
-      href={`${url}`} target="_blank"
-      class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all"
+      href={`${urlDeployed}`} target="_blank"
+      class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-main-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all"
     >
       <IconsUtils utils={utilLink}>
         <GoToUrl />
@@ -38,11 +39,11 @@ const { id = "" ,utilMD = "", utilGit = "", utilLink = "" ,url = "", deployed = 
     </IconsUtils>
   </a>
   <a
-    href={`/project/${id}`}
+    href={`${urlGithub}`}
     class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all"
   >
     <IconsUtils utils={utilGit}>
-      <Github />
+      <Github url='#'/>
     </IconsUtils>
   </a>
 

@@ -2,15 +2,7 @@
 const today = new Date();
 ---
 
-<footer class="">
-	&copy; {today.getFullYear()} Fabian Fonseca (T.F). Todos los derechos reservados.
+<footer class="text-heading-main-light dark:text-paragraph-dark text-center text-clip my-4 text-lg flex flex-col sm:flex-row items-center justify-center space-x-2">
+<p>	&copy; {today.getFullYear()} Fabian Fonseca (T.F). </p>{" "} <span class="text-sm sm:text-lg">{" "}Todos los derechos reservados.</span>
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 2em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	
-</style>
+

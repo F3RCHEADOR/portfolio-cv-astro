@@ -33,7 +33,3 @@ En resumen, es una tienda en línea de donas que te permite ver cómo interactú
 
 Si quieres probar el proyecto en tu máquina local, sigue estos pasos:
 
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/tu-usuario/bakery-donuts.git
-   cd bakery-donuts

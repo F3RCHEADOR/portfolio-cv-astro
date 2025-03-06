@@ -105,7 +105,8 @@ const projects = (await getCollection("project")).sort(
               utilMD="Ver MD"
               utilGit="Ver Repo"
               utilLink="Ver Pagina"
-              url={`${project.data.url}`}
+              urlGithub={`${project.data.urlGithub}`}
+              urlDeployed={`${project.data.url}`}
               deployed={project.data.deployed || false}
             />
           </li>

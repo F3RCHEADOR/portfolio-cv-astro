@@ -27,6 +27,7 @@ const project = defineCollection({
 		heroImage: z.string().optional(),
 		deployed: z.boolean().optional(),
 		url: z.string().optional(),
+		urlGithub: z.string().optional(),
 	})
 })
 

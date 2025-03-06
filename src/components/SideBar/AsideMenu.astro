@@ -5,7 +5,7 @@ import Letter from "@/icons/Letter.astro";
 import Spotify from "@/icons/Spotify.astro";
 import ThemeToggleButton from "./ThemeToggleButton";
 import Twitter from "@/icons/Twitter.astro";
-import Github from "@/icons/Github.astro";
+import Github from "@/icons/GithubSide.astro";
 import Linkenld from "@/icons/Linkenld.astro";
 import CV from "@/icons/CV.astro";
 import SideLi from "@/components/SideBar/SideLi.astro";
@@ -84,7 +84,7 @@ const {
     </SideMenuItems>
 
     <!-- Enlace al CV -->
-    <SideMenuItems href="/contact">
+    <SideMenuItems href="Fabian-Fonseca-CV.pdf">
       <CV />
       <span>Mi CV</span>
     </SideMenuItems>
@@ -109,7 +109,7 @@ const {
 
   <footer class="flex items-center justify-center space-x-8 m-2 pb-8 md:pb-0">
     <IconsUtil utils="Twitter"><Twitter /></IconsUtil>
-    <IconsUtil utils="Github"><Github /></IconsUtil>
-    <IconsUtil utils="Linkenld"><Linkenld /></IconsUtil>
+    <IconsUtil utils="Github"><Github url="https://github.com/F3RCHEADOR" /></IconsUtil>
+    <IconsUtil utils="Linkenld"><Linkenld url="https://www.linkedin.com/in/fabian-fernando-fonseca-chacon-055944352/" /></IconsUtil>
   </footer>
 </div>

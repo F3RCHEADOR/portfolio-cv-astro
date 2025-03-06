@@ -7,6 +7,7 @@ heroImage: /images/DaysSport/heroDays.png
 pubDate: 'Jul 09 2022'
 deployed: true
 url: https://dayssport.co/
+urlGithub: https://github.com/F3RCHEADOR/DaysReactCatalog
 ---
 
 # E-Commerce DaysSport
