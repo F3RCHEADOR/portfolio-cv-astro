@@ -31,17 +31,17 @@ La plataforma **DaysSport** ofrece una serie de características clave para faci
   <div className="flex flex-col ">
    <div class="flex flex-col text-center">
     <img src="/images/DaysSport/heroDays.png" alt="Panadería Astro 1" className="w-full mx-auto object-cover shadow-lg hover:scale-105 transform transition-all  p-1 rounded-lg"/>
-    <span class="-mt-7">Hero / Banner Days</span>
+    <span class="-mt-7 dark:text-paragraph-dark text-paragraph-light">Hero / Banner Days</span>
    </div>
    <div class="flex flex-col text-center">
      <img src="/images/DaysSport/GestionDays.png" alt="Panadería Astro 2" className=" w-full h-full object-cover shadow-lg hover:scale-105 transform transition-all  p-1 rounded-lg"/>
-     <span class="-mt-7">Managment Days</span>
+     <span class="-mt-7 dark:text-paragraph-dark text-paragraph-light">Managment Days</span>
   </div>
   </div>
   <div className="flex flex-col overflow-hidden min-h-full mx-auto
   ">
     <img src="/images/DaysSport/MovilDays.png" alt="Panadería Astro 3" className=" flex hover:scale-105 transform transition-all  flex-col items-center rounded-lg justify-center my-auto object-cover p-1 shadow-lg"/>
-    <span class="-mt-7 text-nowrap text-center">Responsive Days</span>
+    <span class="-mt-7 text-nowrap text-center dark:text-paragraph-dark text-paragraph-light">Responsive Days</span>
   </div>
 </div>
 
