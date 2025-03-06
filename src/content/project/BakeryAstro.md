@@ -3,8 +3,11 @@ title: 'BakeryDonuts'
 subtitle: 'Prototipe E-Commerce'
 description: 'Bakery Donuts es un proyecto creado con Astro, donde se exploran algunas tecnologías interesantes como Nanostore y View Transitions. Es una tienda virtual de donas, pero con un enfoque en la experiencia del usuario'
 utils: ['Astro' , 'Tailwind']
-heroImage: /images/pan1.png
+heroImage: /images/Donas/Donas1.png
 pubDate: 'Jul 09 2022'
+deployed: true
+url: https://bakery-project-nine.vercel.app/
+urlGithub: https://github.com/F3RCHEADOR/Bakery_Project
 ---
 
 
@@ -13,6 +16,25 @@ pubDate: 'Jul 09 2022'
 ## ¿Qué es Bakery Donuts?
 
 **Bakery Donuts** es un proyecto creado con **Astro**, donde se exploran algunas tecnologías interesantes como **Nanostore** y **View Transitions**. Es una tienda virtual de donas, pero con un enfoque en la experiencia del usuario: desde cómo manejar el carrito de compras hasta las transiciones suaves entre las diferentes páginas. Este proyecto no solo es una buena excusa para disfrutar de unas "donas virtuales", sino también una oportunidad para conocer cómo funcionan estas herramientas en un entorno real.
+
+<div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+  <div className="flex flex-col ">
+   <div class="flex flex-col text-center">
+    <img src="/images/Donas/Donas1.png" alt="Panadería Astro 1" className="w-full mx-auto object-cover shadow-lg hover:scale-105 transform transition-all  p-1 rounded-lg"/>
+    <span class="-mt-7 dark:text-paragraph-dark text-paragraph-light">Hero / Donas</span>
+   </div>
+   <div class="flex flex-col text-center">
+     <img src="/images/Donas/Donas2.png" alt="Panadería Astro 2" className=" w-full h-full object-cover shadow-lg hover:scale-105 transform transition-all  p-1 rounded-lg"/>
+     <span class="-mt-7 dark:text-paragraph-dark text-paragraph-light">Interfaz Dona</span>
+  </div>
+  </div>
+  <div className="flex flex-col overflow-hidden min-h-full mx-auto
+  ">
+    <img src="/images/Donas/Donas3.png" alt="Panadería Astro 3" className=" flex hover:scale-105 transform transition-all  flex-col items-center rounded-lg justify-center my-auto object-cover p-1 shadow-lg"/>
+    <span class="-mt-7  dark:text-paragraph-dark text-paragraph-lighttext-nowrap text-center">Responsive Donas</span>
+  </div>
+</div>
+
 
 ### ¿Qué hace especial a este proyecto?
 
@@ -30,6 +52,7 @@ En resumen, es una tienda en línea de donas que te permite ver cómo interactú
 - **View Transitions API**: Una nueva forma de animar las transiciones entre diferentes vistas de un sitio, creando una navegación mucho más dinámica.
 
 ## ¿Cómo empezar?
+
 
 Si quieres probar el proyecto en tu máquina local, sigue estos pasos:
 
